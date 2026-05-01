@@ -1,0 +1,1625 @@
+{
+  "grade3": {
+    "units": [
+      {
+        "id": "g3u1",
+        "name": "Unit 1",
+        "topic": "Countries & Greetings",
+        "questions": [
+          {
+            "id": "g3u1q1",
+            "type": "A",
+            "pair": false,
+            "question": "Please introduce yourself",
+            "scaffold": "この国の挨拶. \nI'm ...",
+            "answer": "Ni hao. I'm ...",
+            "image": "assets/questions/g3/u1-country-china.png"
+          },
+          {
+            "id": "g3u1q2",
+            "type": "A",
+            "pair": false,
+            "question": "Please introduce yourself",
+            "scaffold": "この国の挨拶. \nI'm ...",
+            "answer": "Hello. I'm ...",
+            "image": "assets/questions/g3/u1-country-america.png"
+          },
+          {
+            "id": "g3u1q3",
+            "type": "A",
+            "pair": false,
+            "question": "Please introduce yourself",
+            "scaffold": "この国の挨拶. \nI'm ...",
+            "answer": "Namaste. I'm ...",
+            "image": "assets/questions/g3/u1-country-india.png"
+          },
+          {
+            "id": "g3u1q4",
+            "type": "A",
+            "pair": false,
+            "question": "Please introduce yourself",
+            "scaffold": "この国の挨拶. \nI'm ...",
+            "answer": "Annyeonghaseyo. I'm ...",
+            "image": "assets/questions/g3/u1-country-korea.png"
+          },
+          {
+            "id": "g3u1q5",
+            "type": "A",
+            "pair": false,
+            "question": "Please introduce yourself",
+            "scaffold": "この国の挨拶. \nI'm ...",
+            "answer": "Jambo. I'm ...",
+            "image": "assets/questions/g3/u1-country-kenya.png"
+          },
+          {
+            "id": "g3u1q6",
+            "type": "A",
+            "pair": false,
+            "question": "What country is this?",
+            "scaffold": "It's ...",
+            "answer": "It's Finland.",
+            "image": "assets/questions/g3/u1-country-finland.png"
+          },
+          {
+            "id": "g3u1q7",
+            "type": "A",
+            "pair": false,
+            "question": "What country is this?",
+            "scaffold": "It's ...",
+            "answer": "It's Kenya.",
+            "image": "assets/questions/g3/u1-country-kenya.png"
+          },
+          {
+            "id": "g3u1q8",
+            "type": "A",
+            "pair": false,
+            "question": "What country is this?",
+            "scaffold": "It's ...",
+            "answer": "It's Australia.",
+            "image": "assets/questions/g3/u1-country-australia.png"
+          },
+          {
+            "id": "g3u1q9",
+            "type": "A",
+            "pair": false,
+            "question": "What country is this?",
+            "scaffold": "It's ...",
+            "answer": "It's Japan.",
+            "image": "assets/questions/g3/u1-country-japan.png"
+          },
+          {
+            "id": "g3u1q10",
+            "type": "A",
+            "pair": false,
+            "question": "What country is this?",
+            "scaffold": "It's ...",
+            "answer": "It's Canada.",
+            "image": "assets/questions/g3/u1-country-canada.png"
+          }
+        ]
+      },
+      {
+        "id": "g3u2",
+        "name": "Unit 2",
+        "topic": "Feelings",
+        "questions": [
+          {
+            "id": "g3u2q1",
+            "type": "B",
+            "pair": false,
+            "question": "How are you?",
+            "scaffold": "I'm ...",
+            "helperImages": [
+              "assets/bubbles/feelings-fine.png",
+              "assets/bubbles/feelings-happy.png",
+              "assets/bubbles/feelings-hungry.png",
+              "assets/bubbles/feelings-sad.png",
+              "assets/bubbles/feelings-sleepy.png",
+              "assets/bubbles/feelings-tired.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g3u2q2",
+            "type": "B",
+            "pair": false,
+            "question": "How are you?",
+            "scaffold": "I'm ...",
+            "helperImages": [
+              "assets/bubbles/feelings-fine.png",
+              "assets/bubbles/feelings-happy.png",
+              "assets/bubbles/feelings-hungry.png",
+              "assets/bubbles/feelings-sad.png",
+              "assets/bubbles/feelings-sleepy.png",
+              "assets/bubbles/feelings-tired.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g3u2q3",
+            "type": "B",
+            "pair": false,
+            "question": "How are you?",
+            "scaffold": "I'm ...",
+            "helperImages": [
+              "assets/bubbles/feelings-fine.png",
+              "assets/bubbles/feelings-happy.png",
+              "assets/bubbles/feelings-hungry.png",
+              "assets/bubbles/feelings-sad.png",
+              "assets/bubbles/feelings-sleepy.png",
+              "assets/bubbles/feelings-tired.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g3u2q4",
+            "type": "B",
+            "pair": false,
+            "question": "How are you?",
+            "scaffold": "I'm ...",
+            "helperImages": [
+              "assets/bubbles/feelings-fine.png",
+              "assets/bubbles/feelings-happy.png",
+              "assets/bubbles/feelings-hungry.png",
+              "assets/bubbles/feelings-sad.png",
+              "assets/bubbles/feelings-sleepy.png",
+              "assets/bubbles/feelings-tired.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g3u2q5",
+            "type": "B",
+            "pair": false,
+            "question": "How are you?",
+            "scaffold": "I'm ...",
+            "helperImages": [
+              "assets/bubbles/feelings-fine.png",
+              "assets/bubbles/feelings-happy.png",
+              "assets/bubbles/feelings-hungry.png",
+              "assets/bubbles/feelings-sad.png",
+              "assets/bubbles/feelings-sleepy.png",
+              "assets/bubbles/feelings-tired.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g3u2q6",
+            "type": "A",
+            "pair": true,
+            "question": "How are you?",
+            "scaffold": "I'm ...",
+            "answer": "I'm happy.",
+            "image": "assets/bubbles/feelings-happy.png"
+          },
+          {
+            "id": "g3u2q7",
+            "type": "A",
+            "pair": true,
+            "question": "How are you?",
+            "scaffold": "I'm ...",
+            "answer": "I'm sad.",
+            "image": "assets/bubbles/feelings-sad.png"
+          },
+          {
+            "id": "g3u2q8",
+            "type": "A",
+            "pair": true,
+            "question": "How are you?",
+            "scaffold": "I'm ...",
+            "answer": "I'm hungry.",
+            "image": "assets/bubbles/feelings-hungry.png"
+          },
+          {
+            "id": "g3u2q9",
+            "type": "A",
+            "pair": true,
+            "question": "How are you?",
+            "scaffold": "I'm ...",
+            "answer": "I'm tired.",
+            "image": "assets/bubbles/feelings-tired.png"
+          },
+          {
+            "id": "g3u2q10",
+            "type": "A",
+            "pair": true,
+            "question": "How are you?",
+            "scaffold": "I'm ...",
+            "answer": "I'm sleepy.",
+            "image": "assets/bubbles/feelings-sleepy.png"
+          }
+        ]
+      },
+      {
+        "id": "g3u3",
+        "name": "Unit 3",
+        "topic": "Numbers & Counting",
+        "questions": [
+          {
+            "id": "g3u3q1",
+            "type": "A",
+            "pair": false,
+            "question": "How many apples?",
+            "scaffold": "... apples.",
+            "answer": "12 apples.",
+            "image": "assets/questions/g3/u3-count-apples-12.png"
+          },
+          {
+            "id": "g3u3q2",
+            "type": "A",
+            "pair": false,
+            "question": "How many pencils?",
+            "scaffold": "... pencils.",
+            "answer": "8 pencils.",
+            "image": "assets/questions/g3/u3-count-pencils-8.png"
+          },
+          {
+            "id": "g3u3q3",
+            "type": "A",
+            "pair": false,
+            "question": "How many balls?",
+            "scaffold": "... balls.",
+            "answer": "13 balls.",
+            "image": "assets/questions/g3/u3-count-balls-13.png"
+          },
+          {
+            "id": "g3u3q4",
+            "type": "A",
+            "pair": false,
+            "question": "How many erasers?",
+            "scaffold": "... erasers.",
+            "answer": "19 erasers.",
+            "image": "assets/questions/g3/u3-count-erasers-19.png"
+          },
+          {
+            "id": "g3u3q5",
+            "type": "A",
+            "pair": false,
+            "question": "How many bananas?",
+            "scaffold": "... bananas.",
+            "answer": "11 bananas.",
+            "image": "assets/questions/g3/u3-count-bananas-11.png"
+          },
+          {
+            "id": "g3u3q6",
+            "type": "A",
+            "pair": true,
+            "question": "How many dogs?",
+            "scaffold": "... dogs.",
+            "answer": "15 dogs.",
+            "image": "assets/questions/g3/u3-count-dogs-15.png"
+          },
+          {
+            "id": "g3u3q7",
+            "type": "A",
+            "pair": true,
+            "question": "How many cats?",
+            "scaffold": "... cats.",
+            "answer": "14 cats.",
+            "image": "assets/questions/g3/u3-count-cats-14.png"
+          },
+          {
+            "id": "g3u3q8",
+            "type": "A",
+            "pair": true,
+            "question": "How many lemons?",
+            "scaffold": "... lemons.",
+            "answer": "10 lemons.",
+            "image": "assets/questions/g3/u3-count-lemons-10.png"
+          },
+          {
+            "id": "g3u3q9",
+            "type": "A",
+            "pair": true,
+            "question": "How many onions?",
+            "scaffold": "... onions.",
+            "answer": "9 onions.",
+            "image": "assets/questions/g3/u3-count-onions-9.png"
+          },
+          {
+            "id": "g3u3q10",
+            "type": "A",
+            "pair": true,
+            "question": "How many pandas?",
+            "scaffold": "... pandas.",
+            "answer": "17 pandas.",
+            "image": "assets/questions/g3/u3-count-pandas-17.png"
+          }
+        ]
+      },
+      {
+        "id": "g3u4",
+        "name": "Unit 4",
+        "topic": "Likes & Dislikes",
+        "questions": [
+          {
+            "id": "g3u4q1",
+            "type": "A",
+            "pair": false,
+            "question": "Do you like blue?",
+            "scaffold": "Yes, I do. / \nNo, I don't",
+            "image": "assets/questions/g3/u4-colors-blue.png"
+          },
+          {
+            "id": "g3u4q2",
+            "type": "A",
+            "pair": false,
+            "question": "Do you like soccer?",
+            "scaffold": "Yes, I do. / \nNo, I don't",
+            "image": "assets/questions/g3/u4-sports-soccer.png"
+          },
+          {
+            "id": "g3u4q3",
+            "type": "A",
+            "pair": false,
+            "question": "Do you like ice cream?",
+            "scaffold": "Yes, I do. / \nNo, I don't",
+            "image": "assets/questions/g3/u4-food-ice-cream.png"
+          },
+          {
+            "id": "g3u4q4",
+            "type": "A",
+            "pair": false,
+            "question": "Do you like green peppers?",
+            "scaffold": "Yes, I do. / \nNo, I don't",
+            "image": "assets/questions/g3/u4-vegetables-green-pepper.png"
+          },
+          {
+            "id": "g3u4q5",
+            "type": "A",
+            "pair": false,
+            "question": "Do you like dodgeball?",
+            "scaffold": "Yes, I do. / \nNo, I don't",
+            "image": "assets/questions/g3/u4-sports-dodgeball.png"
+          },
+          {
+            "id": "g3u4q6",
+            "type": "B",
+            "pair": true,
+            "question": "I like ... \nDo you like ... ?",
+            "scaffold": "Yes, I do. / \nNo, I don't",
+            "helperImages": [
+              "assets/bubbles/colors-green.png",
+              "assets/bubbles/colors-red.png",
+              "assets/bubbles/food-pizza.png",
+              "assets/bubbles/food-sushi.png",
+              "assets/bubbles/fruits-melon.png",
+              "assets/bubbles/fruits-strawberry.png",
+              "assets/bubbles/sports-baseball.png",
+              "assets/bubbles/sports-basketball.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g3u4q7",
+            "type": "B",
+            "pair": true,
+            "question": "I like ... \nDo you like ... ?",
+            "scaffold": "Yes, I do. / \nNo, I don't",
+            "helperImages": [
+              "assets/bubbles/colors-green.png",
+              "assets/bubbles/colors-red.png",
+              "assets/bubbles/food-pizza.png",
+              "assets/bubbles/food-sushi.png",
+              "assets/bubbles/fruits-melon.png",
+              "assets/bubbles/fruits-strawberry.png",
+              "assets/bubbles/sports-baseball.png",
+              "assets/bubbles/sports-basketball.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g3u4q8",
+            "type": "B",
+            "pair": true,
+            "question": "I like ... \nDo you like ... ?",
+            "scaffold": "Yes, I do. / \nNo, I don't",
+            "helperImages": [
+              "assets/bubbles/colors-green.png",
+              "assets/bubbles/colors-red.png",
+              "assets/bubbles/food-pizza.png",
+              "assets/bubbles/food-sushi.png",
+              "assets/bubbles/fruits-melon.png",
+              "assets/bubbles/fruits-strawberry.png",
+              "assets/bubbles/sports-baseball.png",
+              "assets/bubbles/sports-basketball.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g3u4q9",
+            "type": "B",
+            "pair": true,
+            "question": "I like ... \nDo you like ... ?",
+            "scaffold": "Yes, I do. / \nNo, I don't",
+            "helperImages": [
+              "assets/bubbles/colors-green.png",
+              "assets/bubbles/colors-red.png",
+              "assets/bubbles/food-pizza.png",
+              "assets/bubbles/food-sushi.png",
+              "assets/bubbles/fruits-melon.png",
+              "assets/bubbles/fruits-strawberry.png",
+              "assets/bubbles/sports-baseball.png",
+              "assets/bubbles/sports-basketball.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g3u4q10",
+            "type": "B",
+            "pair": true,
+            "question": "I like ... \nDo you like ... ?",
+            "scaffold": "Yes, I do. / \nNo, I don't",
+            "helperImages": [
+              "assets/bubbles/colors-green.png",
+              "assets/bubbles/colors-red.png",
+              "assets/bubbles/food-pizza.png",
+              "assets/bubbles/food-sushi.png",
+              "assets/bubbles/fruits-melon.png",
+              "assets/bubbles/fruits-strawberry.png",
+              "assets/bubbles/sports-baseball.png",
+              "assets/bubbles/sports-basketball.png",
+              "assets/bubbles/nado.png"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "grade4": {
+    "units": [
+      {
+        "id": "g4u1",
+        "name": "Unit 1",
+        "topic": "Countries & Greetings",
+        "questions": [
+          {
+            "id": "g4u1q1",
+            "type": "A",
+            "pair": false,
+            "question": "Please introduce yourself",
+            "scaffold": "この国の挨拶. \nI'm ...",
+            "answer": "Ni hao. I'm ...",
+            "image": "assets/questions/g4/u1-country-china.png"
+          },
+          {
+            "id": "g4u1q2",
+            "type": "A",
+            "pair": false,
+            "question": "Please introduce yourself",
+            "scaffold": "この国の挨拶. \nI'm ...",
+            "answer": "Selamat siang. I'm ...",
+            "image": "assets/questions/g4/u1-country-indonesia.png"
+          },
+          {
+            "id": "g4u1q3",
+            "type": "A",
+            "pair": false,
+            "question": "Please introduce yourself",
+            "scaffold": "この国の挨拶. \nI'm ...",
+            "answer": "Zdravstvuite. I'm ...",
+            "image": "assets/questions/g4/u1-country-russia.png"
+          },
+          {
+            "id": "g4u1q4",
+            "type": "A",
+            "pair": false,
+            "question": "Please introduce yourself",
+            "scaffold": "この国の挨拶. \nI'm ...",
+            "answer": "As-salamu alaykum. I'm ...",
+            "image": "assets/questions/g4/u1-country-saudi-arabia.png"
+          },
+          {
+            "id": "g4u1q5",
+            "type": "A",
+            "pair": false,
+            "question": "Please introduce yourself",
+            "scaffold": "この国の挨拶. \nI'm ...",
+            "answer": "Jambo. I'm ...",
+            "image": "assets/questions/g4/u1-country-kenya.png"
+          },
+          {
+            "id": "g4u1q6",
+            "type": "A",
+            "pair": false,
+            "question": "What country is this?",
+            "scaffold": "It's ...",
+            "answer": "It's Saudi Arabia.",
+            "image": "assets/questions/g4/u1-country-saudi-arabia.png"
+          },
+          {
+            "id": "g4u1q7",
+            "type": "A",
+            "pair": false,
+            "question": "What country is this?",
+            "scaffold": "It's ...",
+            "answer": "It's Russia.",
+            "image": "assets/questions/g4/u1-country-russia.png"
+          },
+          {
+            "id": "g4u1q8",
+            "type": "A",
+            "pair": false,
+            "question": "What country is this?",
+            "scaffold": "It's ...",
+            "answer": "It's Indonesia.",
+            "image": "assets/questions/g4/u1-country-indonesia.png"
+          },
+          {
+            "id": "g4u1q9",
+            "type": "A",
+            "pair": false,
+            "question": "What country is this?",
+            "scaffold": "It's ...",
+            "answer": "It's Japan.",
+            "image": "assets/questions/g4/u1-country-japan.png"
+          },
+          {
+            "id": "g4u1q10",
+            "type": "A",
+            "pair": false,
+            "question": "What country is this?",
+            "scaffold": "It's ...",
+            "answer": "It's Canada.",
+            "image": "assets/questions/g4/u1-country-canada.png"
+          }
+        ]
+      },
+      {
+        "id": "g4u2",
+        "name": "Unit 2",
+        "topic": "Weather & Activities",
+        "questions": [
+          {
+            "id": "g4u2q1",
+            "type": "A",
+            "pair": false,
+            "question": "How's the weather?",
+            "scaffold": "It's ...",
+            "answer": "It's sunny.",
+            "image": "assets/questions/g4/u2-weather-sunny.png"
+          },
+          {
+            "id": "g4u2q2",
+            "type": "A",
+            "pair": false,
+            "question": "How's the weather?",
+            "scaffold": "It's ...",
+            "answer": "It's rainy.",
+            "image": "assets/questions/g4/u2-weather-rainy.png"
+          },
+          {
+            "id": "g4u2q3",
+            "type": "A",
+            "pair": false,
+            "question": "How's the weather?",
+            "scaffold": "It's ...",
+            "answer": "It's cloudy.",
+            "image": "assets/questions/g4/u2-weather-cloudy.png"
+          },
+          {
+            "id": "g4u2q4",
+            "type": "A",
+            "pair": false,
+            "question": "How's the weather?",
+            "scaffold": "It's ...",
+            "answer": "It's snowy.",
+            "image": "assets/questions/g4/u2-weather-snowy.png"
+          },
+          {
+            "id": "g4u2q5",
+            "type": "A",
+            "pair": true,
+            "question": "How's the weather?",
+            "scaffold": "It's ...\nLet's ...",
+            "answer": "It's sunny.\nLet's play dodgeball.",
+            "image": "assets/questions/g4/u2-sunny-play-dodgeball.png"
+          },
+          {
+            "id": "g4u2q6",
+            "type": "A",
+            "pair": true,
+            "question": "How's the weather?",
+            "scaffold": "It's ...\nLet's ...",
+            "answer": "It's sunny.\nLet's play soccer.",
+            "image": "assets/questions/g4/u2-sunny-play-soccer.png"
+          },
+          {
+            "id": "g4u2q7",
+            "type": "A",
+            "pair": true,
+            "question": "How's the weather?",
+            "scaffold": "It's ...\nLet's ...",
+            "answer": "It's cloudy.\nLet's play tag.",
+            "image": "assets/questions/g4/u2-cloudy-play-tag.png"
+          },
+          {
+            "id": "g4u2q8",
+            "type": "A",
+            "pair": true,
+            "question": "How's the weather?",
+            "scaffold": "It's ...\nLet's ...",
+            "answer": "It's rainy.\nLet's play cards.",
+            "image": "assets/questions/g4/u2-rainy-play-cards.png"
+          },
+          {
+            "id": "g4u2q9",
+            "type": "A",
+            "pair": true,
+            "question": "How's the weather?",
+            "scaffold": "It's ...\nLet's ...",
+            "answer": "It's rainy.\nLet's read books.",
+            "image": "assets/questions/g4/u2-rainy-read-books.png"
+          },
+          {
+            "id": "g4u2q10",
+            "type": "A",
+            "pair": true,
+            "question": "How's the weather?",
+            "scaffold": "It's ...\nLet's ...",
+            "answer": "It's snowy.\nLet's make a snowman.",
+            "image": "assets/questions/g4/u2-snowy-make-a-snowman.png"
+          }
+        ]
+      },
+      {
+        "id": "g4u3",
+        "name": "Unit 3",
+        "topic": "Days & Subjects",
+        "questions": [
+          {
+            "id": "g4u3q1",
+            "type": "A",
+            "pair": true,
+            "question": "What day is it?",
+            "scaffold": "It's ...",
+            "answer": "It's Monday.",
+            "image": "assets/questions/g4/u3-days-Monday.png"
+          },
+          {
+            "id": "g4u3q2",
+            "type": "A",
+            "pair": true,
+            "question": "What day is it?",
+            "scaffold": "It's ...",
+            "answer": "It's Tuesday.",
+            "image": "assets/questions/g4/u3-days-Tuesday.png"
+          },
+          {
+            "id": "g4u3q3",
+            "type": "A",
+            "pair": true,
+            "question": "What day is it?",
+            "scaffold": "It's ...",
+            "answer": "It's Wednesday.",
+            "image": "assets/questions/g4/u3-days-Wednesday.png"
+          },
+          {
+            "id": "g4u3q4",
+            "type": "A",
+            "pair": true,
+            "question": "What day is it?",
+            "scaffold": "It's ...",
+            "answer": "It's Thursday.",
+            "image": "assets/questions/g4/u3-days-Thursday.png"
+          },
+          {
+            "id": "g4u3q5",
+            "type": "A",
+            "pair": true,
+            "question": "What day is it?",
+            "scaffold": "It's ...",
+            "answer": "It's Friday.",
+            "image": "assets/questions/g4/u3-days-Friday.png"
+          },
+          {
+            "id": "g4u3q6",
+            "type": "A",
+            "pair": true,
+            "question": "What day is it?",
+            "scaffold": "It's ...",
+            "answer": "It's Saturday.",
+            "image": "assets/questions/g4/u3-days-Saturday.png"
+          },
+          {
+            "id": "g4u3q7",
+            "type": "A",
+            "pair": true,
+            "question": "What day is it?",
+            "scaffold": "It's ...",
+            "answer": "It's Sunday.",
+            "image": "assets/questions/g4/u3-days-Sunday.png"
+          },
+          {
+            "id": "g4u3q8",
+            "type": "B",
+            "pair": false,
+            "question": "Use your school schedule.",
+            "scaffold": "I study ... on Mondays.",
+            "helperImages": [
+              "assets/bubbles/subjects-arts-and-crafts.png",
+              "assets/bubbles/subjects-English.png",
+              "assets/bubbles/subjects-home-economics.png",
+              "assets/bubbles/subjects-Japanese.png",
+              "assets/bubbles/subjects-math.png",
+              "assets/bubbles/subjects-music.png",
+              "assets/bubbles/subjects-PE.png",
+              "assets/bubbles/subjects-science.png",
+              "assets/bubbles/subjects-social-studies.png"
+            ]
+          },
+          {
+            "id": "g4u3q9",
+            "type": "B",
+            "pair": false,
+            "question": "Use your school schedule.",
+            "scaffold": "I study ... on Tuesdays.",
+            "helperImages": [
+              "assets/bubbles/subjects-arts-and-crafts.png",
+              "assets/bubbles/subjects-English.png",
+              "assets/bubbles/subjects-home-economics.png",
+              "assets/bubbles/subjects-Japanese.png",
+              "assets/bubbles/subjects-math.png",
+              "assets/bubbles/subjects-music.png",
+              "assets/bubbles/subjects-PE.png",
+              "assets/bubbles/subjects-science.png",
+              "assets/bubbles/subjects-social-studies.png"
+            ]
+          },
+          {
+            "id": "g4u3q10",
+            "type": "B",
+            "pair": false,
+            "question": "Use your school schedule.",
+            "scaffold": "I study ... on Wednesdays.",
+            "helperImages": [
+              "assets/bubbles/subjects-arts-and-crafts.png",
+              "assets/bubbles/subjects-English.png",
+              "assets/bubbles/subjects-home-economics.png",
+              "assets/bubbles/subjects-Japanese.png",
+              "assets/bubbles/subjects-math.png",
+              "assets/bubbles/subjects-music.png",
+              "assets/bubbles/subjects-PE.png",
+              "assets/bubbles/subjects-science.png",
+              "assets/bubbles/subjects-social-studies.png"
+            ]
+          },
+          {
+            "id": "g4u3q11",
+            "type": "B",
+            "pair": false,
+            "question": "Use your school schedule.",
+            "scaffold": "I study ... on Thursdays.",
+            "helperImages": [
+              "assets/bubbles/subjects-arts-and-crafts.png",
+              "assets/bubbles/subjects-English.png",
+              "assets/bubbles/subjects-home-economics.png",
+              "assets/bubbles/subjects-Japanese.png",
+              "assets/bubbles/subjects-math.png",
+              "assets/bubbles/subjects-music.png",
+              "assets/bubbles/subjects-PE.png",
+              "assets/bubbles/subjects-science.png",
+              "assets/bubbles/subjects-social-studies.png"
+            ]
+          },
+          {
+            "id": "g4u3q12",
+            "type": "B",
+            "pair": false,
+            "question": "Use your school schedule.",
+            "scaffold": "I study ... on Fridays.",
+            "helperImages": [
+              "assets/bubbles/subjects-arts-and-crafts.png",
+              "assets/bubbles/subjects-English.png",
+              "assets/bubbles/subjects-home-economics.png",
+              "assets/bubbles/subjects-Japanese.png",
+              "assets/bubbles/subjects-math.png",
+              "assets/bubbles/subjects-music.png",
+              "assets/bubbles/subjects-PE.png",
+              "assets/bubbles/subjects-science.png",
+              "assets/bubbles/subjects-social-studies.png"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "g4u4",
+        "name": "Unit 4",
+        "topic": "Daily Routine & Time",
+        "questions": [
+          {
+            "id": "g4u4q1",
+            "type": "A",
+            "pair": true,
+            "question": "What time is it?",
+            "scaffold": "It's ...\nIt's ...",
+            "answer": "It's 6 a.m.\nIt's Wake-up Time.",
+            "image": "assets/questions/g4/u4-wake-up-time.png"
+          },
+          {
+            "id": "g4u4q2",
+            "type": "A",
+            "pair": true,
+            "question": "What time is it?",
+            "scaffold": "It's ...\nIt's ...",
+            "answer": "It's 7 a.m.\nIt's Breakfast Time.",
+            "image": "assets/questions/g4/u4-breakfast-time.png"
+          },
+          {
+            "id": "g4u4q3",
+            "type": "A",
+            "pair": true,
+            "question": "What time is it?",
+            "scaffold": "It's ...\nIt's ...",
+            "answer": "It's 10 a.m.\nIt's Study Time.",
+            "image": "assets/questions/g4/u4-study-time.png"
+          },
+          {
+            "id": "g4u4q4",
+            "type": "A",
+            "pair": true,
+            "question": "What time is it?",
+            "scaffold": "It's ...\nIt's ...",
+            "answer": "It's 12 p.m.\nIt's Lunch Time.",
+            "image": "assets/questions/g4/u4-lunch-time.png"
+          },
+          {
+            "id": "g4u4q5",
+            "type": "A",
+            "pair": true,
+            "question": "What time is it?",
+            "scaffold": "It's ...\nIt's ...",
+            "answer": "It's 3 p.m.\nIt's Snack Time.",
+            "image": "assets/questions/g4/u4-snack-time.png"
+          },
+          {
+            "id": "g4u4q6",
+            "type": "A",
+            "pair": false,
+            "question": "What time is it?",
+            "scaffold": "It's ...\nIt's ...",
+            "answer": "It's 5 p.m.\nIt's Homework Time.",
+            "image": "assets/questions/g4/u4-homework-time.png"
+          },
+          {
+            "id": "g4u4q7",
+            "type": "A",
+            "pair": false,
+            "question": "What time is it?",
+            "scaffold": "It's ...\nIt's ...",
+            "answer": "It's 7 p.m.\nIt's Dinner Time.",
+            "image": "assets/questions/g4/u4-dinner-time.png"
+          },
+          {
+            "id": "g4u4q8",
+            "type": "A",
+            "pair": false,
+            "question": "What time is it?",
+            "scaffold": "It's ...\nIt's ...",
+            "answer": "It's 8 p.m.\nIt's Bath Time.",
+            "image": "assets/questions/g4/u4-bath-time.png"
+          },
+          {
+            "id": "g4u4q9",
+            "type": "A",
+            "pair": false,
+            "question": "What time is it?",
+            "scaffold": "It's ...\nIt's ...",
+            "answer": "It's 9 p.m.\nIt's Bed Time.",
+            "image": "assets/questions/g4/u4-bed-time.png"
+          },
+          {
+            "id": "g4u4q10",
+            "type": "A",
+            "pair": false,
+            "question": "What time is it?",
+            "scaffold": "It's ...\nIt's ...",
+            "answer": "It's 3 a.m.\nIt's Dream Time.",
+            "image": "assets/questions/g4/u4-dream-time.png"
+          }
+        ]
+      }
+    ]
+  },
+  "grade5": {
+    "units": [
+      {
+        "id": "g5u1",
+        "name": "Unit 1",
+        "topic": "Hello, friends!",
+        "questions": [
+          {
+            "id": "g5u1q1",
+            "type": "A",
+            "pair": false,
+            "question": "How do you spell your name?",
+            "scaffold": "...",
+            "image": "assets/questions/g5/u1-alphabet.png"
+          },
+          {
+            "id": "g5u1q2",
+            "type": "A",
+            "pair": true,
+            "question": "How do you spell your name?",
+            "scaffold": "...",
+            "image": "assets/questions/g5/u1-alphabet.png"
+          },
+          {
+            "id": "g5u1q3",
+            "type": "B",
+            "pair": false,
+            "question": "What subject do you like?",
+            "scaffold": "I like ...",
+            "helperImages": [
+              "assets/bubbles/nhsubjects-arts-and-crafts.png",
+              "assets/bubbles/nhsubjects-calligraphy.png",
+              "assets/bubbles/nhsubjects-English.png",
+              "assets/bubbles/nhsubjects-home-economics.png",
+              "assets/bubbles/nhsubjects-Japanese.png",
+              "assets/bubbles/nhsubjects-math.png",
+              "assets/bubbles/nhsubjects-music.png",
+              "assets/bubbles/nhsubjects-P.E.png",
+              "assets/bubbles/nhsubjects-science.png",
+              "assets/bubbles/nhsubjects-social-studies.png"
+            ]
+          },
+          {
+            "id": "g5u1q4",
+            "type": "B",
+            "pair": true,
+            "question": "What sport do you like?",
+            "scaffold": "I like ...",
+            "helperImages": [
+              "assets/bubbles/nhsports-badminton.png",
+              "assets/bubbles/nhsports-baseball.png",
+              "assets/bubbles/nhsports-basketball.png",
+              "assets/bubbles/nhsports-dodgeball.png",
+              "assets/bubbles/nhsports-soccer.png",
+              "assets/bubbles/nhsports-swimming.png",
+              "assets/bubbles/nhsports-volleyball.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g5u1q5",
+            "type": "B",
+            "pair": false,
+            "question": "What food do you like?",
+            "scaffold": "I like ...",
+            "helperImages": [
+              "assets/bubbles/nhfood-bread.png",
+              "assets/bubbles/nhfood-hamburger.png",
+              "assets/bubbles/nhfood-pizza.png",
+              "assets/bubbles/nhfood-ramen.png",
+              "assets/bubbles/nhfood-rice.png",
+              "assets/bubbles/nhfood-steak.png",
+              "assets/bubbles/nhfood-sushi.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g5u1q6",
+            "type": "B",
+            "pair": true,
+            "question": "What animal do you like?",
+            "scaffold": "I like ...",
+            "helperImages": [
+              "assets/bubbles/nhanimals-bear.png",
+              "assets/bubbles/nhanimals-cat.png",
+              "assets/bubbles/nhanimals-dog.png",
+              "assets/bubbles/nhanimals-panda.png",
+              "assets/bubbles/nhanimals-rabbit.png",
+              "assets/bubbles/nhanimals-snake.png",
+              "assets/bubbles/nhanimals-tiger.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g5u1q7",
+            "type": "A",
+            "pair": true,
+            "question": "I like ...\nDo you like ... ?",
+            "scaffold": "Yes, I do. /\nNo, I don't.",
+            "image": "assets/questions/g5/sukina.png"
+          },
+          {
+            "id": "g5u1q8",
+            "type": "A",
+            "pair": true,
+            "question": "I like ...\nDo you like ... ?",
+            "scaffold": "Yes, I do. /\nNo, I don't.",
+            "image": "assets/questions/g5/sukina.png"
+          },
+          {
+            "id": "g5u1q9",
+            "type": "A",
+            "pair": true,
+            "question": "I don't like ...\nDo you like ... ?",
+            "scaffold": "Yes, I do. /\nNo, I don't.",
+            "image": "assets/questions/g5/kiraina.png"
+          },
+          {
+            "id": "g5u1q10",
+            "type": "A",
+            "pair": true,
+            "question": "I don't like ...\nDo you like ... ?",
+            "scaffold": "Yes, I do. /\nNo, I don't.",
+            "image": "assets/questions/g5/kiraina.png"
+          }
+        ]
+      },
+      {
+        "id": "g5u2",
+        "name": "Unit 2",
+        "topic": "Happy Birthday!",
+        "questions": [
+          {
+            "id": "g5u2q1",
+            "type": "A",
+            "pair": false,
+            "question": "When is your birthday?",
+            "scaffold": "My birthday is ...",
+            "image": "assets/questions/g5/u2-months.png"
+          },
+          {
+            "id": "g5u2q2",
+            "type": "A",
+            "pair": true,
+            "question": "When is your birthday?",
+            "scaffold": "My birthday is ...",
+            "image": "assets/questions/g5/u2-months.png"
+          },
+          {
+            "id": "g5u2q3",
+            "type": "A",
+            "pair": false,
+            "question": "When is Christmas?",
+            "scaffold": "It's ...",
+            "answer": "It's December 25th.",
+            "image": "assets/questions/g5/u2-christmas.png"
+          },
+          {
+            "id": "g5u2q4",
+            "type": "A",
+            "pair": false,
+            "question": "When is Valentine's Day?",
+            "scaffold": "It's ...",
+            "answer": "It's February 14th.",
+            "image": "assets/questions/g5/u2-valentines-day.png"
+          },
+          {
+            "id": "g5u2q5",
+            "type": "A",
+            "pair": false,
+            "question": "When is Halloween?",
+            "scaffold": "It's ...",
+            "answer": "It's October 31st",
+            "image": "assets/questions/g5/u2-halloween.png"
+          },
+          {
+            "id": "g5u2q6",
+            "type": "A",
+            "pair": true,
+            "question": "What do you want for your birthday?",
+            "scaffold": "I want ...",
+            "image": "assets/questions/g5/u2-present.png"
+          },
+          {
+            "id": "g5u2q7",
+            "type": "A",
+            "pair": false,
+            "question": "What do you want for your birthday?",
+            "scaffold": "I want ...",
+            "image": "assets/questions/g5/u2-present.png"
+          },
+          {
+            "id": "g5u2q8",
+            "type": "A",
+            "pair": false,
+            "question": "What does he want for his birthday?",
+            "scaffold": "He wants ...",
+            "answer": "He wants a pencil.",
+            "image": "assets/questions/g5/u2-pencil.png"
+          },
+          {
+            "id": "g5u2q9",
+            "type": "A",
+            "pair": false,
+            "question": "What does she want for her birthday?",
+            "scaffold": "She wants ...",
+            "answer": "She wants a hat.",
+            "image": "assets/questions/g5/u2-hat.png"
+          },
+          {
+            "id": "g5u2q10",
+            "type": "A",
+            "pair": false,
+            "question": "What does she want for her birthday?",
+            "scaffold": "She wants ...",
+            "answer": "She wants a bike.",
+            "image": "assets/questions/g5/u2-bike.png"
+          }
+        ]
+      },
+      {
+        "id": "g5u3",
+        "name": "Unit 3",
+        "topic": "Can you play dodgeball?",
+        "questions": [
+          {
+            "id": "g5u3q1",
+            "type": "A",
+            "pair": true,
+            "question": "Can you play the piano ?",
+            "scaffold": "Yes, I can. /\nNo, I can't.",
+            "image": "assets/questions/g5/u3-play-the-piano.png"
+          },
+          {
+            "id": "g5u3q2",
+            "type": "A",
+            "pair": false,
+            "question": "Can you swim fast?",
+            "scaffold": "Yes, I can. /\nNo, I can't.",
+            "image": "assets/questions/g5/u3-swim-fast.png"
+          },
+          {
+            "id": "g5u3q3",
+            "type": "A",
+            "pair": false,
+            "question": "Can you dance well?",
+            "scaffold": "Yes, I can. /\nNo, I can't.",
+            "image": "assets/questions/g5/u3-dance-well.png"
+          },
+          {
+            "id": "g5u3q4",
+            "type": "A",
+            "pair": true,
+            "question": "Can you play the recorder?",
+            "scaffold": "Yes, I can. /\nNo, I can't.",
+            "image": "assets/questions/g5/u3-play-the-recorder.png"
+          },
+          {
+            "id": "g5u3q5",
+            "type": "A",
+            "pair": true,
+            "question": "Can you fly?",
+            "scaffold": "Yes, I can. /\nNo, I can't.",
+            "image": "assets/questions/g5/u3-fly.png"
+          },
+          {
+            "id": "g5u3q6",
+            "type": "A",
+            "pair": true,
+            "question": "I can ...\nCan you ... ?",
+            "scaffold": "Yes, I can. I can ... /\nNo, I can't. I can't ...",
+            "image": "assets/questions/g5/dekiru.png"
+          },
+          {
+            "id": "g5u3q7",
+            "type": "A",
+            "pair": true,
+            "question": "I can ...\nCan you ... ?",
+            "scaffold": "Yes, I can. I can ... /\nNo, I can't. I can't ...",
+            "image": "assets/questions/g5/dekiru.png"
+          },
+          {
+            "id": "g5u3q8",
+            "type": "A",
+            "pair": true,
+            "question": "I can ...\nCan you ... ?",
+            "scaffold": "Yes, I can. I can ... /\nNo, I can't. I can't ...",
+            "image": "assets/questions/g5/dekiru.png"
+          },
+          {
+            "id": "g5u3q9",
+            "type": "A",
+            "pair": true,
+            "question": "I can't ...\nCan you ... ?",
+            "scaffold": "Yes, I can. I can ... /\nNo, I can't. I can't ...",
+            "image": "assets/questions/g5/dekinai.png"
+          },
+          {
+            "id": "g5u3q10",
+            "type": "A",
+            "pair": true,
+            "question": "I can't ...\nCan you ... ?",
+            "scaffold": "Yes, I can. I can ... /\nNo, I can't. I can't ...",
+            "image": "assets/questions/g5/dekinai.png"
+          }
+        ]
+      }
+    ]
+  },
+  "grade6": {
+    "units": [
+      {
+        "id": "g6u1",
+        "name": "Unit 1",
+        "topic": "This is me!",
+        "questions": [
+          {
+            "id": "g6u1q1",
+            "type": "B",
+            "pair": false,
+            "question": "What subject do you like?",
+            "scaffold": "I like ...",
+            "helperImages": [
+              "assets/bubbles/nhsubjects-arts-and-crafts.png",
+              "assets/bubbles/nhsubjects-calligraphy.png",
+              "assets/bubbles/nhsubjects-English.png",
+              "assets/bubbles/nhsubjects-home-economics.png",
+              "assets/bubbles/nhsubjects-Japanese.png",
+              "assets/bubbles/nhsubjects-math.png",
+              "assets/bubbles/nhsubjects-music.png",
+              "assets/bubbles/nhsubjects-P.E.png",
+              "assets/bubbles/nhsubjects-science.png",
+              "assets/bubbles/nhsubjects-social-studies.png"
+            ]
+          },
+          {
+            "id": "g6u1q2",
+            "type": "B",
+            "pair": false,
+            "question": "What sport do you like?",
+            "scaffold": "I like ...",
+            "helperImages": [
+              "assets/bubbles/nhsports-badminton.png",
+              "assets/bubbles/nhsports-baseball.png",
+              "assets/bubbles/nhsports-basketball.png",
+              "assets/bubbles/nhsports-dodgeball.png",
+              "assets/bubbles/nhsports-soccer.png",
+              "assets/bubbles/nhsports-swimming.png",
+              "assets/bubbles/nhsports-volleyball.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g6u1q3",
+            "type": "B",
+            "pair": false,
+            "question": "What food do you like?",
+            "scaffold": "I like ...",
+            "helperImages": [
+              "assets/bubbles/nhfood-bread.png",
+              "assets/bubbles/nhfood-hamburger.png",
+              "assets/bubbles/nhfood-pizza.png",
+              "assets/bubbles/nhfood-ramen.png",
+              "assets/bubbles/nhfood-rice.png",
+              "assets/bubbles/nhfood-steak.png",
+              "assets/bubbles/nhfood-sushi.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g6u1q4",
+            "type": "B",
+            "pair": false,
+            "question": "What animal do you like?",
+            "scaffold": "I like ...",
+            "helperImages": [
+              "assets/bubbles/nhanimals-bear.png",
+              "assets/bubbles/nhanimals-cat.png",
+              "assets/bubbles/nhanimals-dog.png",
+              "assets/bubbles/nhanimals-panda.png",
+              "assets/bubbles/nhanimals-rabbit.png",
+              "assets/bubbles/nhanimals-snake.png",
+              "assets/bubbles/nhanimals-tiger.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g6u1q5",
+            "type": "B",
+            "pair": true,
+            "question": "What subject do you like?",
+            "scaffold": "I like ...",
+            "helperImages": [
+              "assets/bubbles/nhsubjects-arts-and-crafts.png",
+              "assets/bubbles/nhsubjects-calligraphy.png",
+              "assets/bubbles/nhsubjects-English.png",
+              "assets/bubbles/nhsubjects-home-economics.png",
+              "assets/bubbles/nhsubjects-Japanese.png",
+              "assets/bubbles/nhsubjects-math.png",
+              "assets/bubbles/nhsubjects-music.png",
+              "assets/bubbles/nhsubjects-P.E.png",
+              "assets/bubbles/nhsubjects-science.png",
+              "assets/bubbles/nhsubjects-social-studies.png"
+            ]
+          },
+          {
+            "id": "g6u1q6",
+            "type": "B",
+            "pair": true,
+            "question": "What sport do you like?",
+            "scaffold": "I like ...",
+            "helperImages": [
+              "assets/bubbles/nhsports-badminton.png",
+              "assets/bubbles/nhsports-baseball.png",
+              "assets/bubbles/nhsports-basketball.png",
+              "assets/bubbles/nhsports-dodgeball.png",
+              "assets/bubbles/nhsports-soccer.png",
+              "assets/bubbles/nhsports-swimming.png",
+              "assets/bubbles/nhsports-volleyball.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g6u1q7",
+            "type": "B",
+            "pair": true,
+            "question": "What food do you like?",
+            "scaffold": "I like ...",
+            "helperImages": [
+              "assets/bubbles/nhfood-bread.png",
+              "assets/bubbles/nhfood-hamburger.png",
+              "assets/bubbles/nhfood-pizza.png",
+              "assets/bubbles/nhfood-ramen.png",
+              "assets/bubbles/nhfood-rice.png",
+              "assets/bubbles/nhfood-steak.png",
+              "assets/bubbles/nhfood-sushi.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g6u1q8",
+            "type": "B",
+            "pair": true,
+            "question": "What animal do you like?",
+            "scaffold": "I like ...",
+            "helperImages": [
+              "assets/bubbles/nhanimals-bear.png",
+              "assets/bubbles/nhanimals-cat.png",
+              "assets/bubbles/nhanimals-dog.png",
+              "assets/bubbles/nhanimals-panda.png",
+              "assets/bubbles/nhanimals-rabbit.png",
+              "assets/bubbles/nhanimals-snake.png",
+              "assets/bubbles/nhanimals-tiger.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g6u1q9",
+            "type": "A",
+            "pair": true,
+            "question": "What is your treasure?",
+            "scaffold": "My treasure is ,,,\nIt's from  ...",
+            "image": "assets/questions/g6/treasure.png"
+          },
+          {
+            "id": "g6u1q10",
+            "type": "A",
+            "pair": false,
+            "question": "What is your treasure?",
+            "scaffold": "My treasure is ,,,\nIt's from  ...",
+            "image": "assets/questions/g6/treasure.png"
+          }
+        ]
+      },
+      {
+        "id": "g6u2",
+        "name": "Unit 2",
+        "topic": "Daily Life",
+        "questions": [
+          {
+            "id": "g6u2q1",
+            "type": "A",
+            "pair": true,
+            "question": "What time do you usually get up?",
+            "scaffold": "I usually get up at ...",
+            "image": "assets/questions/g6/u2-get-up.png"
+          },
+          {
+            "id": "g6u2q2",
+            "type": "A",
+            "pair": true,
+            "question": "What time do you usually go to bed?",
+            "scaffold": "I usually go to bed at ...",
+            "image": "assets/questions/g6/u2-go-to-bed.png"
+          },
+          {
+            "id": "g6u2q3",
+            "type": "A",
+            "pair": true,
+            "question": "What time do you usually have breakfast?",
+            "scaffold": "I usually have breakfast at ...",
+            "image": "assets/questions/g6/u2-have-breakfast.png"
+          },
+          {
+            "id": "g6u2q4",
+            "type": "A",
+            "pair": true,
+            "question": "What time do you usually have lunch?",
+            "scaffold": "I usually have lunch at ...",
+            "image": "assets/questions/g6/u2-have-lunch.png"
+          },
+          {
+            "id": "g6u2q5",
+            "type": "A",
+            "pair": true,
+            "question": "What time do you usually have dinner?",
+            "scaffold": "I usually have dinner at ...",
+            "image": "assets/questions/g6/u2-have-dinner.png"
+          },
+          {
+            "id": "g6u2q6",
+            "type": "A",
+            "pair": true,
+            "question": "What time do you usually study English?",
+            "scaffold": "I usually study English at ...",
+            "image": "assets/questions/g6/u2-study-english.png"
+          },
+          {
+            "id": "g6u2q7",
+            "type": "A",
+            "pair": true,
+            "question": "What time do you usually take a bath?",
+            "scaffold": "I usually take a bath at ...",
+            "image": "assets/questions/g6/u2-take-a-bath.png"
+          },
+          {
+            "id": "g6u2q8",
+            "type": "B",
+            "pair": false,
+            "question": "Complete this sentence",
+            "scaffold": "I sometimes ... at ...",
+            "helperImages": [
+              "assets/bubbles/nhactivities-brush-my-teeth.png",
+              "assets/bubbles/nhactivities-clean-my-room.png",
+              "assets/bubbles/nhactivities-do-my-homework.png",
+              "assets/bubbles/nhactivities-go-home.png",
+              "assets/bubbles/nhactivities-take-out-the-garbage.png",
+              "assets/bubbles/nhactivities-walk-my-dog.png",
+              "assets/bubbles/nhactivities-watch-TV.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g6u2q9",
+            "type": "B",
+            "pair": false,
+            "question": "Complete this sentence",
+            "scaffold": "I usually ... at ...",
+            "helperImages": [
+              "assets/bubbles/nhactivities-brush-my-teeth.png",
+              "assets/bubbles/nhactivities-clean-my-room.png",
+              "assets/bubbles/nhactivities-do-my-homework.png",
+              "assets/bubbles/nhactivities-go-home.png",
+              "assets/bubbles/nhactivities-take-out-the-garbage.png",
+              "assets/bubbles/nhactivities-walk-my-dog.png",
+              "assets/bubbles/nhactivities-watch-TV.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g6u2q10",
+            "type": "B",
+            "pair": false,
+            "question": "Complete this sentence",
+            "scaffold": "I always ... at ...",
+            "helperImages": [
+              "assets/bubbles/nhactivities-brush-my-teeth.png",
+              "assets/bubbles/nhactivities-clean-my-room.png",
+              "assets/bubbles/nhactivities-do-my-homework.png",
+              "assets/bubbles/nhactivities-go-home.png",
+              "assets/bubbles/nhactivities-take-out-the-garbage.png",
+              "assets/bubbles/nhactivities-walk-my-dog.png",
+              "assets/bubbles/nhactivities-watch-TV.png",
+              "assets/bubbles/nado.png"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "g6u3",
+        "name": "Unit 3",
+        "topic": "My Best Memory",
+        "questions": [
+          {
+            "id": "g6u3q1",
+            "type": "A",
+            "pair": false,
+            "question": "Change \"eat\" to 過去形",
+            "scaffold": "I ... sushi last night.",
+            "answer": "I ate sushi last night.",
+            "image": "assets/questions/g6/u3-eat-ate.png"
+          },
+          {
+            "id": "g6u3q2",
+            "type": "A",
+            "pair": false,
+            "question": "Change \"go\" to 過去形",
+            "scaffold": "I ... to the park yesterday.",
+            "answer": "I went to the park yesterday.",
+            "image": "assets/questions/g6/u3-go-went.png"
+          },
+          {
+            "id": "g6u3q3",
+            "type": "A",
+            "pair": false,
+            "question": "Change \"see\" to 過去形",
+            "scaffold": "I ... a rainbow yesterday.",
+            "answer": "I saw a rainbow yesterday.",
+            "image": "assets/questions/g6/u3-see-saw.png"
+          },
+          {
+            "id": "g6u3q4",
+            "type": "A",
+            "pair": false,
+            "question": "Change \"enjoy\" to 過去形",
+            "scaffold": "I ... playing with my friends yesterday.",
+            "answer": "I enjoyed playing with my friends yesterday.",
+            "image": "assets/questions/g6/u3-enjoy-enjoyed.png"
+          },
+          {
+            "id": "g6u3q5",
+            "type": "A",
+            "pair": false,
+            "question": "Change \"play\" to 過去形",
+            "scaffold": "I ... soccer on the weekend.",
+            "answer": "I played soccer on the weekend.",
+            "image": "assets/questions/g6/u3-play-played.png"
+          },
+          {
+            "id": "g6u3q6",
+            "type": "A",
+            "pair": false,
+            "question": "Change \"watch\" to 過去形",
+            "scaffold": "I ... a movie yesterday.",
+            "answer": "I watched a movie yesterday.",
+            "image": "assets/questions/g6/u3-watch-watched.png"
+          },
+          {
+            "id": "g6u3q7",
+            "type": "B",
+            "pair": false,
+            "question": "How was the weather yesterday?",
+            "scaffold": "It was ...",
+            "helperImages": [
+              "assets/bubbles/nhweather-cloudy.png",
+              "assets/bubbles/nhweather-cold.png",
+              "assets/bubbles/nhweather-hot.png",
+              "assets/bubbles/nhweather-rainy.png",
+              "assets/bubbles/nhweather-snowy.png",
+              "assets/bubbles/nhweather-sunny.png",
+              "assets/bubbles/nhweather-windy.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g6u3q8",
+            "type": "B",
+            "pair": false,
+            "question": "How was the weather yesterday?",
+            "scaffold": "It was ...",
+            "helperImages": [
+              "assets/bubbles/nhweather-cloudy.png",
+              "assets/bubbles/nhweather-cold.png",
+              "assets/bubbles/nhweather-hot.png",
+              "assets/bubbles/nhweather-rainy.png",
+              "assets/bubbles/nhweather-snowy.png",
+              "assets/bubbles/nhweather-sunny.png",
+              "assets/bubbles/nhweather-windy.png",
+              "assets/bubbles/nado.png"
+            ]
+          },
+          {
+            "id": "g6u3q9",
+            "type": "A",
+            "pair": true,
+            "question": "How was your weekend?",
+            "scaffold": "It was ...\nI ...",
+            "image": "assets/questions/g6/u3-weekend.png"
+          },
+          {
+            "id": "g6u3q10",
+            "type": "A",
+            "pair": true,
+            "question": "How was your weekend?",
+            "scaffold": "It was ...\nI ...",
+            "image": "assets/questions/g6/u3-weekend.png"
+          }
+        ]
+      }
+    ]
+  }
+}
