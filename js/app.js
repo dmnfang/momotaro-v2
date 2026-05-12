@@ -172,7 +172,7 @@ const App = {
   playCardGame() {
     if (this._playBusy) return;
     this._playBusy = true;
-    setTimeout(() => { this._playBusy = false; }, 800);
+    setTimeout(() => { this._playBusy = false; }, 1000);
     if (Math.random() < 0.30) {
       Rare.init();
       this.goTo('rare');
@@ -217,48 +217,41 @@ const App = {
   },
 
   advanceTurn(scoringTeamIndex = null, delta = 0) {
-    if (this._advancing) return;
-    this._advancing = true;
-    setTimeout(() => { this._advancing = false; }, 1500);
     this._playBusy = false;
-    this._questionBusy = false;
 
     const teamIndex = scoringTeamIndex ?? this.activeTeamIndex;
     const oldScore = this.teams[teamIndex].score;
     const newScore = oldScore + delta;
 
     // Log completed turn
-    const completingTeam = this.teams[teamIndex ?? this.activeTeamIndex];
+    const completingTeam = this.teams[teamIndex];
     if (completingTeam) this.turnHistory.push({
       name: completingTeam.name,
       result: this._lastTurnResult || '?'
     });
     this._lastTurnResult = null;
 
-    // Advance turn index first
+    // Advance turn index
     this.activeTeamIndex = (this.activeTeamIndex + 1) % this.teamCount;
 
-    // Temporarily set old score so render shows it
+    // Render with old score then animate to new
     this.teams[teamIndex].score = oldScore;
     Scoreboard.render();
     this.goTo('scoreboard');
-
-    // Now apply real score and animate
     this.teams[teamIndex].score = newScore;
     if (delta !== 0) {
       Scoreboard.animateScoreChange(teamIndex, oldScore, newScore);
     }
   },
 
-showHistory() {
+  showHistory() {
     const overlay = document.getElementById('history-overlay');
     const content = document.getElementById('history-content');
-    const teams = this.teams.map(t => t.name);
     const rounds = [];
     let round = [];
 
-    this.turnHistory.forEach((name, i) => {
-      round.push(name);
+    this.turnHistory.forEach((entry, i) => {
+      round.push(entry);
       if (round.length === this.teamCount || i === this.turnHistory.length - 1) {
         rounds.push([...round]);
         round = [];
@@ -269,7 +262,9 @@ showHistory() {
       content.innerHTML = '<div>No turns completed yet.</div>';
     } else {
       content.innerHTML = rounds.map((r, i) =>
-        `<div><strong style="color:var(--text-primary)">Round ${i + 1}:</strong> ${r.join(', ')}</div>`
+        `<div><strong style="color:var(--text-primary)">Round ${i + 1}:</strong> ${
+          r.map(e => `${e.name} – <strong>${e.result}</strong>`).join(', ')
+        }</div>`
       ).join('');
     }
 
