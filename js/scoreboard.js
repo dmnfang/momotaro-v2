@@ -9,13 +9,13 @@ const Scoreboard = {
     container.innerHTML = App.teams.map((team, i) => `
       <div class="team-column ${i === App.activeTeamIndex ? 'active' : ''}" data-team="${i}">
         <div class="team-column-name">${team.name}</div>
-        <div class="team-score-group">
+        <div class="team-score-zone">
           <div class="team-column-score" id="score-${i}">${team.score}</div>
-          <div class="omamori-display" id="omamori-${i}">
-            ${omamoriSlotsHTML(team.omamori)}
-          </div>
         </div>
-        <button class="question-trigger-btn ${i === App.activeTeamIndex ? '' : 'invisible'}" id="question-btn-${i}">Question</button>
+        <div class="omamori-display" id="omamori-${i}">
+          ${omamoriSlotsHTML(team.omamori)}
+        </div>
+        <button class="question-trigger-btn ${i === App.activeTeamIndex ? '' : 'inactive'}" id="question-btn-${i}">Question</button>
       </div>
     `).join('');
 

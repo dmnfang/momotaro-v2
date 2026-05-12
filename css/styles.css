@@ -322,9 +322,9 @@ img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
   border-radius: var(--r-xl);
   border: 2px solid var(--stroke-default);
   display: flex; flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   padding: 24px;
-  gap: 8px;
+  gap: 0;
   transition: border-color 0.2s;
   overflow: hidden;
 }
@@ -333,18 +333,20 @@ img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
   border-width: 3px;
 }
 
+/* Zone 1 — Team name */
 .team-column-name {
   font-family: var(--font-display);
   font-size: clamp(16px, 2.5vw, 32px); font-weight: 600;
   color: var(--text-secondary);
+  text-align: center;
   flex-shrink: 0;
+  padding-bottom: 12px;
 }
-.team-score-group {
+
+/* Zone 2 — Score, fills remaining space */
+.team-score-zone {
   flex: 1; min-height: 0;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: flex-start;
-  gap: 8px; width: 100%;
-  padding-top: 12px;
+  display: flex; align-items: center; justify-content: center;
 }
 .team-column-score {
   font-family: var(--font-display);
@@ -353,21 +355,34 @@ img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
   line-height: 1;
   transition: color 0.3s;
 }
-.team-column-score.pop {
-  transform: scale(1.15);
+.team-column-score.pop { transform: scale(1.15); }
+
+/* Zone 3 — Omamori inset container, fixed height */
+.omamori-display {
+  flex-shrink: 0;
+  background: var(--surface-base);
+  border-radius: var(--r-lg);
+  padding: 8px;
+  margin-bottom: 12px;
 }
 
-.omamori-display {
-  width: 60%;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-.omamori-slots {
+/* 2 teams / 3 teams: side by side (2×1) */
+.scoreboard-columns[data-teams="2"] .omamori-slots,
+.scoreboard-columns[data-teams="3"] .omamori-slots {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
   gap: 8px;
-  width: 100%;
 }
+
+/* 4 teams: stacked (1×2) */
+.scoreboard-columns[data-teams="4"] .omamori-slots {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+}
+
 .omamori-slot {
   aspect-ratio: 1;
   display: flex; align-items: center; justify-content: center;
@@ -379,6 +394,7 @@ img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
 }
 .omamori-slot.empty img { opacity: 0; }
 
+/* Zone 4 — Button, fixed height, always present */
 .question-trigger-btn {
   width: 100%; height: 56px;
   border-radius: var(--r-lg);
@@ -390,7 +406,11 @@ img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
   flex-shrink: 0;
   transition: transform 0.1s, opacity 0.1s;
 }
-.question-trigger-btn:active { transform: scale(0.97); opacity: 0.85; }
+.question-trigger-btn.inactive {
+  opacity: 0.2;
+  pointer-events: none;
+}
+.question-trigger-btn:not(.inactive):active { transform: scale(0.97); opacity: 0.85; }
 
 /* ═══════════════════════════════════════════════
    QUESTION
