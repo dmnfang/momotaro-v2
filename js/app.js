@@ -190,8 +190,8 @@ const App = {
     this.activeTeamIndex = teamIndex;
     const team = this.teams[teamIndex];
     document.getElementById('question-team-label').textContent = team.name;
-    Question.load();
-    this.goTo('question');
+    const loaded = Question.load();
+    if (loaded) this.goTo('question');
   },
 
   // ── Card game ─────────────────────────────────

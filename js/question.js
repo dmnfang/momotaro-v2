@@ -5,9 +5,10 @@
 const Question = {
   load() {
     const q = getNextQuestion();
-    if (!q) return;
+    if (!q) return false;
     App.currentQuestion = q;
     this.render(q);
+    return true;
   },
 
   render(q) {
