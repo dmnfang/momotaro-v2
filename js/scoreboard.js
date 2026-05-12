@@ -8,7 +8,7 @@ const Scoreboard = {
     container.dataset.teams = App.teamCount;
     container.innerHTML = App.teams.map((team, i) => `
       <div class="team-column ${i === App.activeTeamIndex ? 'active' : ''}" data-team="${i}">
-        <div class="team-column-name">${team.name}</div>
+        <div class="team-column-name" onclick="App.overrideTurn(${i})" style="cursor:pointer">${team.name}</div>
         <div class="team-score-zone">
           <div class="team-column-score" id="score-${i}">${team.score}</div>
         </div>

@@ -214,6 +214,11 @@ const App = {
     Scoreboard.updateScore(this.activeTeamIndex);
   },
 
+  overrideTurn(teamIndex) {
+    this.activeTeamIndex = teamIndex;
+    Scoreboard.render();
+  },
+
   advanceTurn(scoringTeamIndex = null, delta = 0) {
     if (this._advancing) return;
     this._advancing = true;
