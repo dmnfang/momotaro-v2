@@ -349,6 +349,7 @@ img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
   flex: 1; min-height: 0;
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
+  padding: 0 8px;
 }
 .team-column-score {
   font-family: var(--font-display);
@@ -366,7 +367,7 @@ img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
   background: var(--surface-base);
   border-radius: var(--r-lg);
   padding: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
   overflow: hidden;
   pointer-events: none;
 }
