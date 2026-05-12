@@ -182,6 +182,9 @@ const App = {
   },
 
   openQuestion(teamIndex) {
+    if (this._questionBusy) return;
+    this._questionBusy = true;
+    setTimeout(() => { this._questionBusy = false; }, 1000);
     this._playBusy = false;
     this.activeTeamIndex = teamIndex;
     const team = this.teams[teamIndex];
@@ -212,6 +215,7 @@ const App = {
 
   advanceTurn(scoringTeamIndex = null, delta = 0) {
     this._playBusy = false;
+    this._questionBusy = false;
 
     const teamIndex = scoringTeamIndex ?? this.activeTeamIndex;
     const oldScore = this.teams[teamIndex].score;
