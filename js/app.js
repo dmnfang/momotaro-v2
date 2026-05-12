@@ -183,6 +183,7 @@ const App = {
   },
 
   openQuestion(teamIndex) {
+    console.log('openQuestion called for', this.teams[teamIndex]?.name);
     if (this._questionBusy) return;
     this._questionBusy = true;
     setTimeout(() => { this._questionBusy = false; }, 1000);
@@ -231,8 +232,9 @@ const App = {
     const oldScore = this.teams[teamIndex].score;
     const newScore = oldScore + delta;
 
-   // Log completed turn
+    // Log completed turn
     const completingTeam = this.teams[teamIndex ?? this.activeTeamIndex];
+    console.log('advanceTurn called, logging:', completingTeam?.name);
     if (completingTeam) this.turnHistory.push(completingTeam.name);
 
     // Advance turn index first
