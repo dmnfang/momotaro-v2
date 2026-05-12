@@ -183,9 +183,6 @@ const App = {
   },
 
   openQuestion(teamIndex) {
-    // Block if already on question screen
-    if (this.screens.question.classList.contains('active')) return;
-    if (this._advancing) return;
     this._playBusy = false;
     this.activeTeamIndex = teamIndex;
     const team = this.teams[teamIndex];
