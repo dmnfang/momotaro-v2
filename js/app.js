@@ -229,8 +229,11 @@ const App = {
 
     // Log completed turn
     const completingTeam = this.teams[teamIndex ?? this.activeTeamIndex];
-    console.log('advanceTurn called, logging:', completingTeam?.name);
-    if (completingTeam) this.turnHistory.push(completingTeam.name);
+    if (completingTeam) this.turnHistory.push({
+      name: completingTeam.name,
+      result: this._lastTurnResult || '?'
+    });
+    this._lastTurnResult = null;
 
     // Advance turn index first
     this.activeTeamIndex = (this.activeTeamIndex + 1) % this.teamCount;

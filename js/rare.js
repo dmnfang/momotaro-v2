@@ -116,6 +116,7 @@ const Rare = {
       <button class="rare-confirm-btn" id="rare-confirm">End Turn</button>
     `;
     document.getElementById('rare-confirm').onclick = () => {
+      App._lastTurnResult = `Rare (+${value} points)`;
       App.advanceTurn(App.activeTeamIndex, value);
     };
   },
@@ -135,6 +136,7 @@ const Rare = {
       <button class="rare-confirm-btn" id="rare-confirm">Confirm</button>
     `;
     document.getElementById('rare-confirm').onclick = () => {
+      App._lastTurnResult = 'Rare (omamori)';
       if (!alreadyMax) App.teams[App.activeTeamIndex].omamori = newCount;
       App.advanceTurn(null, 0);
     };
@@ -170,6 +172,7 @@ const Rare = {
 
     document.getElementById('rare-confirm').addEventListener('click', () => {
       if (this.swapTarget === null) return;
+      App._lastTurnResult = 'Rare (swap)';
       App.goTo('scoreboard');
       Scoreboard.render();
       Scoreboard.animateSwap(currentIdx, this.swapTarget, () => {

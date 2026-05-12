@@ -237,10 +237,11 @@ const CardGame = {
     }, 200);
   },
 
-  endTurn(points, wasProtected) {
+endTurn(points, wasProtected) {
+    const sign = points >= 0 ? '+' : '';
+    App._lastTurnResult = `${sign}${points} points`;
     App.advanceTurn(App.activeTeamIndex, points);
   },
-};
 
 function shuffle(arr) {
   const a = [...arr];
