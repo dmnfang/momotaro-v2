@@ -265,7 +265,7 @@ const App = {
       ).join('');
     }
 
-    overlay.classList.remove('hidden');
+    overlay.style.display = 'flex';
   },
 
   toggleFullscreen() {

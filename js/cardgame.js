@@ -242,6 +242,7 @@ endTurn(points, wasProtected) {
     App._lastTurnResult = `${sign}${points} points`;
     App.advanceTurn(App.activeTeamIndex, points);
   },
+};
 
 function shuffle(arr) {
   const a = [...arr];
