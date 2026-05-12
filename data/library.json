@@ -12,7 +12,7 @@
             "pair": false,
             "question": "Please introduce yourself",
             "scaffold": "この国の挨拶. \nI'm ...",
-            "answer": "Ni hao. I'm ...",
+            "answer": "Ni hao. \nI'm ...",
             "image": "assets/questions/g3/u1-country-china.png"
           },
           {
@@ -21,7 +21,7 @@
             "pair": false,
             "question": "Please introduce yourself",
             "scaffold": "この国の挨拶. \nI'm ...",
-            "answer": "Hello. I'm ...",
+            "answer": "Hello. \nI'm ...",
             "image": "assets/questions/g3/u1-country-america.png"
           },
           {
@@ -30,7 +30,7 @@
             "pair": false,
             "question": "Please introduce yourself",
             "scaffold": "この国の挨拶. \nI'm ...",
-            "answer": "Namaste. I'm ...",
+            "answer": "Namaste. \nI'm ...",
             "image": "assets/questions/g3/u1-country-india.png"
           },
           {
@@ -39,7 +39,7 @@
             "pair": false,
             "question": "Please introduce yourself",
             "scaffold": "この国の挨拶. \nI'm ...",
-            "answer": "Annyeonghaseyo. I'm ...",
+            "answer": "Annyeonghaseyo. \nI'm ...",
             "image": "assets/questions/g3/u1-country-korea.png"
           },
           {
@@ -48,7 +48,7 @@
             "pair": false,
             "question": "Please introduce yourself",
             "scaffold": "この国の挨拶. \nI'm ...",
-            "answer": "Jambo. I'm ...",
+            "answer": "Jambo. \nI'm ...",
             "image": "assets/questions/g3/u1-country-kenya.png"
           },
           {
@@ -479,7 +479,7 @@
             "pair": false,
             "question": "Please introduce yourself",
             "scaffold": "この国の挨拶. \nI'm ...",
-            "answer": "Ni hao. I'm ...",
+            "answer": "Ni hao. \nI'm ...",
             "image": "assets/questions/g4/u1-country-china.png"
           },
           {
@@ -488,7 +488,7 @@
             "pair": false,
             "question": "Please introduce yourself",
             "scaffold": "この国の挨拶. \nI'm ...",
-            "answer": "Selamat siang. I'm ...",
+            "answer": "Selamat siang. \nI'm ...",
             "image": "assets/questions/g4/u1-country-indonesia.png"
           },
           {
@@ -497,7 +497,7 @@
             "pair": false,
             "question": "Please introduce yourself",
             "scaffold": "この国の挨拶. \nI'm ...",
-            "answer": "Zdravstvuite. I'm ...",
+            "answer": "Zdravstvuite. \nI'm ...",
             "image": "assets/questions/g4/u1-country-russia.png"
           },
           {
@@ -506,7 +506,7 @@
             "pair": false,
             "question": "Please introduce yourself",
             "scaffold": "この国の挨拶. \nI'm ...",
-            "answer": "As-salamu alaykum. I'm ...",
+            "answer": "As-salamu alaykum. \nI'm ...",
             "image": "assets/questions/g4/u1-country-saudi-arabia.png"
           },
           {
@@ -515,7 +515,7 @@
             "pair": false,
             "question": "Please introduce yourself",
             "scaffold": "この国の挨拶. \nI'm ...",
-            "answer": "Jambo. I'm ...",
+            "answer": "Jambo. \nI'm ...",
             "image": "assets/questions/g4/u1-country-kenya.png"
           },
           {
