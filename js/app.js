@@ -170,8 +170,6 @@ const App = {
   },
 
   playCardGame() {
-    if (this._playBusy) return;
-    this._playBusy = true;
     if (Math.random() < 0.30) {
       Rare.init();
       this.goTo('rare');
@@ -179,7 +177,6 @@ const App = {
       CardGame.init();
       this.goTo('cardgame');
     }
-    this._playBusy = false;
   },
 
   openQuestion(teamIndex) {
