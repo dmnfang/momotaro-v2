@@ -976,10 +976,7 @@ img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
 .scoreboard-columns[data-teams="3"] .team-column-score { font-size: clamp(120px, 20vw, 240px); }
 .scoreboard-columns[data-teams="4"] .team-column-score { font-size: clamp(96px,  16vw, 192px); }
 
-/* 3-digit scores shrink to ~70% to stay within column */
-.scoreboard-columns[data-teams="2"] .team-column-score.three-digits { font-size: clamp(112px, 19vw, 224px); }
-.scoreboard-columns[data-teams="3"] .team-column-score.three-digits { font-size: clamp(84px,  14vw, 168px); }
-.scoreboard-columns[data-teams="4"] .team-column-score.three-digits { font-size: clamp(67px,  11vw, 134px); }
+/* 3-digit scores shrink to ~70% to stay within column REMOVED */
 @keyframes scorePop {
   0%   { transform: scale(1); }
   40%  { transform: scale(1.25); }

@@ -185,6 +185,7 @@ const App = {
     if (this._questionBusy) return;
     this._questionBusy = true;
     setTimeout(() => { this._questionBusy = false; }, 1000);
+    this._advancing = false;
     this._playBusy = false;
     this.activeTeamIndex = teamIndex;
     const team = this.teams[teamIndex];
@@ -214,6 +215,9 @@ const App = {
   },
 
   advanceTurn(scoringTeamIndex = null, delta = 0) {
+    if (this._advancing) return;
+    this._advancing = true;
+    setTimeout(() => { this._advancing = false; }, 1500);
     this._playBusy = false;
     this._questionBusy = false;
 
