@@ -12,6 +12,7 @@ const App = {
   currentQuestion: null,
   sharedQueue: [],
   teamQueues: [],
+  turnHistory: [],
 
   // ── Screen references ──────────────────────────
   screens: {},
@@ -230,6 +231,10 @@ const App = {
     const oldScore = this.teams[teamIndex].score;
     const newScore = oldScore + delta;
 
+   // Log completed turn
+    const completingTeam = this.teams[teamIndex ?? this.activeTeamIndex];
+    if (completingTeam) this.turnHistory.push(completingTeam.name);
+
     // Advance turn index first
     this.activeTeamIndex = (this.activeTeamIndex + 1) % this.teamCount;
 
@@ -243,6 +248,32 @@ const App = {
     if (delta !== 0) {
       Scoreboard.animateScoreChange(teamIndex, oldScore, newScore);
     }
+  },
+
+showHistory() {
+    const overlay = document.getElementById('history-overlay');
+    const content = document.getElementById('history-content');
+    const teams = this.teams.map(t => t.name);
+    const rounds = [];
+    let round = [];
+
+    this.turnHistory.forEach((name, i) => {
+      round.push(name);
+      if (round.length === this.teamCount || i === this.turnHistory.length - 1) {
+        rounds.push([...round]);
+        round = [];
+      }
+    });
+
+    if (rounds.length === 0) {
+      content.innerHTML = '<div>No turns completed yet.</div>';
+    } else {
+      content.innerHTML = rounds.map((r, i) =>
+        `<div><strong style="color:var(--text-primary)">Round ${i + 1}:</strong> ${r.join(', ')}</div>`
+      ).join('');
+    }
+
+    overlay.classList.remove('hidden');
   },
 
   toggleFullscreen() {
