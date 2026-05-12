@@ -186,7 +186,7 @@ const App = {
     console.log('openQuestion called for', this.teams[teamIndex]?.name);
     if (this._questionBusy) return;
     this._questionBusy = true;
-    setTimeout(() => { this._questionBusy = false; }, 1000);
+    setTimeout(() => { this._questionBusy = false; }, 2000);
     this._advancing = false;
     this._playBusy = false;
     this.activeTeamIndex = teamIndex;
