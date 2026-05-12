@@ -183,11 +183,9 @@ const App = {
   },
 
   openQuestion(teamIndex) {
-    console.log('openQuestion called for', this.teams[teamIndex]?.name);
-    if (this._questionBusy) return;
-    this._questionBusy = true;
-    setTimeout(() => { this._questionBusy = false; }, 2000);
-    this._advancing = false;
+    // Block if already on question screen
+    if (this.screens.question.classList.contains('active')) return;
+    if (this._advancing) return;
     this._playBusy = false;
     this.activeTeamIndex = teamIndex;
     const team = this.teams[teamIndex];
