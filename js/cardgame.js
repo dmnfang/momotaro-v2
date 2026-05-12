@@ -97,7 +97,22 @@ const CardGame = {
   },
 
   flipTile(el, index) {
-    const tile = this.tiles[index];
+    let tile = this.tiles[index];
+
+    // If oni shows up before 2 point cards have been flipped,
+    // secretly swap it with a random unflipped point tile
+    if (tile.type === 'oni' && this.flippedCount < 2) {
+      const safeIndex = this.tiles.findIndex(
+        (t, i) => t.type === 'points' && i !== index &&
+        !document.querySelector(`.tile[data-index="${i}"]`)?.classList.contains('flipped')
+      );
+      if (safeIndex !== -1) {
+        // Swap in the array
+        [this.tiles[index], this.tiles[safeIndex]] = [this.tiles[safeIndex], this.tiles[index]];
+        tile = this.tiles[index];
+      }
+    }
+
     el.classList.add('flipping', 'flipped');
 
     setTimeout(() => {
