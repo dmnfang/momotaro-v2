@@ -19,10 +19,15 @@ const Scoreboard = {
       </div>
     `).join('');
 
-    // Apply digit classes after render
-    App.teams.forEach((team, i) => {
-      const el = document.getElementById(`score-${i}`);
-      if (el) this.updateDigitClass(el, team.score);
+    // Apply digit classes and fit score after render
+    requestAnimationFrame(() => {
+      App.teams.forEach((team, i) => {
+        const el = document.getElementById(`score-${i}`);
+        if (el) {
+          this.updateDigitClass(el, team.score);
+          this.fitScore(el);
+        }
+      });
     });
 
     App.teams.forEach((_, i) => {
@@ -39,6 +44,15 @@ const Scoreboard = {
 
   updateDigitClass(el, score) {
     el.classList.toggle('three-digits', Math.abs(score) >= 100);
+  },
+
+  fitScore(el) {
+    const zone = el.parentElement;
+    if (!zone) return;
+    const maxWidth = zone.clientWidth - 16;
+    const maxHeight = zone.clientHeight;
+    const size = Math.min(maxWidth, maxHeight * 0.9);
+    el.style.fontSize = size + 'px';
   },
 
   updateScore(teamIndex) {
@@ -86,6 +100,7 @@ const Scoreboard = {
         clearInterval(tick);
         el.textContent = newScore;
         this.updateDigitClass(el, newScore);
+        this.fitScore(el);
         // Fade back to normal blue
         setTimeout(() => {
           el.style.transition = 'color 0.5s ease';
