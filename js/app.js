@@ -213,7 +213,7 @@ const App = {
     Scoreboard.render();
   },
 
-  advanceTurn(scoringTeamIndex = null, delta = 0) {
+  advanceTurn(scoringTeamIndex = null, delta = 0, skipRender = false) {
     this._playBusy = false;
 
     const teamIndex = scoringTeamIndex ?? this.activeTeamIndex;
@@ -231,13 +231,19 @@ const App = {
     // Advance turn index
     this.activeTeamIndex = (this.activeTeamIndex + 1) % this.teamCount;
 
-    // Render with old score then animate to new
-    this.teams[teamIndex].score = oldScore;
-    Scoreboard.render();
-    this.goTo('scoreboard');
-    this.teams[teamIndex].score = newScore;
-    if (delta !== 0) {
-      Scoreboard.animateScoreChange(teamIndex, oldScore, newScore);
+    if (skipRender) {
+      // Already on scoreboard — just update active team highlight
+      Scoreboard.render();
+      this.teams[teamIndex].score = newScore;
+    } else {
+      // Render with old score then animate to new
+      this.teams[teamIndex].score = oldScore;
+      Scoreboard.render();
+      this.goTo('scoreboard');
+      this.teams[teamIndex].score = newScore;
+      if (delta !== 0) {
+        Scoreboard.animateScoreChange(teamIndex, oldScore, newScore);
+      }
     }
   },
 

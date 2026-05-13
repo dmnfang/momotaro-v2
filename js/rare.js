@@ -175,7 +175,7 @@ const Rare = {
       App.goTo('scoreboard');
       Scoreboard.render();
       Scoreboard.animateSwap(currentIdx, this.swapTarget, () => {
-        App.advanceTurn(null, 0);
+        App.advanceTurn(null, 0, true);
       });
     });
   },
