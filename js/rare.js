@@ -35,10 +35,10 @@ const Rare = {
 
     // If all scores are 0 swap is pointless — replace with another points tile
     const tiles = [
-      allZero ? { type: 'points', value: 10 } : { type: 'swap' },
+      allZero ? { type: 'points', value: 7 } : { type: 'swap' },
       { type: 'omamori' },
-      { type: 'points', value: 10 },
-      { type: 'points', value: 10 },
+      { type: 'points', value: 7 },
+      { type: 'points', value: 7 },
     ];
     return shuffle(tiles);
   },
