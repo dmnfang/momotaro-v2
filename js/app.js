@@ -210,7 +210,14 @@ const App = {
 
   overrideTurn(teamIndex) {
     this.activeTeamIndex = teamIndex;
-    Scoreboard.render();
+    document.querySelectorAll('.team-column').forEach((col, i) => {
+      col.classList.toggle('active', i === teamIndex);
+      const btn = col.querySelector('.question-trigger-btn');
+      if (btn) {
+        btn.classList.toggle('inactive', i !== teamIndex);
+        btn.onclick = () => App.openQuestion(i);
+      }
+    });
   },
 
   advanceTurn(scoringTeamIndex = null, delta = 0, skipRender = false) {
