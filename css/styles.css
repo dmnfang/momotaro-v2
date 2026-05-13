@@ -417,7 +417,7 @@ img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
 /* ═══════════════════════════════════════════════
    QUESTION
 ═══════════════════════════════════════════════ */
-#screen-question { padding: 24px; gap: 16px; }
+#screen-question { padding: 16px; gap: 12px; }
 
 .question-topbar {
   display: flex; align-items: center;
@@ -559,7 +559,7 @@ img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
 /* ═══════════════════════════════════════════════
    CARD GAME (9 tiles)
 ═══════════════════════════════════════════════ */
-#screen-cardgame { padding: 24px; gap: 16px; }
+#screen-cardgame { padding: 16px; gap: 12px; }
 
 .cardgame-topbar { flex-shrink: 0; }
 .cardgame-team-label {
@@ -780,7 +780,7 @@ img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
 /* ═══════════════════════════════════════════════
    RARE CARD GAME (4 tiles)
 ═══════════════════════════════════════════════ */
-#screen-rare { padding: 24px; gap: 16px; }
+#screen-rare { padding: 16px; gap: 12px; }
 
 .rare-topbar { flex-shrink: 0; }
 .rare-team-label {
