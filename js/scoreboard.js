@@ -20,7 +20,7 @@ const Scoreboard = {
     `).join('');
 
     // Apply digit classes and fit score after render
-    requestAnimationFrame(() => {
+    setTimeout(() => {
       App.teams.forEach((team, i) => {
         const el = document.getElementById(`score-${i}`);
         if (el) {
@@ -28,7 +28,7 @@ const Scoreboard = {
           this.fitScore(el);
         }
       });
-    });
+    }, 50);
 
     App.teams.forEach((_, i) => {
       const btn = document.getElementById(`question-btn-${i}`);
