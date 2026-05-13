@@ -232,9 +232,16 @@ const App = {
     this.activeTeamIndex = (this.activeTeamIndex + 1) % this.teamCount;
 
     if (skipRender) {
-      // Already on scoreboard — just update active team highlight
-      Scoreboard.render();
+      // Already on scoreboard — just update active column highlight without full re-render
       this.teams[teamIndex].score = newScore;
+      document.querySelectorAll('.team-column').forEach((col, i) => {
+        col.classList.toggle('active', i === this.activeTeamIndex);
+        const btn = col.querySelector('.question-trigger-btn');
+        if (btn) {
+          btn.classList.toggle('inactive', i !== this.activeTeamIndex);
+          btn.onclick = () => App.openQuestion(i);
+        }
+      });
     } else {
       // Render with old score then animate to new
       this.teams[teamIndex].score = oldScore;
