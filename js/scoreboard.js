@@ -135,6 +135,7 @@ const Scoreboard = {
 
     els.forEach(el => {
       el.style.transition = `color ${PULSE_MS}ms ease`;
+      this.fitScore(el);
     });
 
     let pulse = 0;
@@ -151,6 +152,7 @@ const Scoreboard = {
         });
         fromEl.textContent = App.teams[fromIndex].score;
         toEl.textContent   = App.teams[toIndex].score;
+        els.forEach(el => this.fitScore(el));
 
         setTimeout(() => {
           els.forEach(el => {
