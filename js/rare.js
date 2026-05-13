@@ -32,11 +32,11 @@ const Rare = {
 
   generateTiles() {
     const allZero = App.teams.every(t => t.score === 0);
+    const hasOmamori = App.activeTeam().omamori >= 1;
 
-    // If all scores are 0 swap is pointless — replace with another points tile
     const tiles = [
       allZero ? { type: 'points', value: 7 } : { type: 'swap' },
-      { type: 'omamori' },
+      hasOmamori ? { type: 'points', value: 7 } : { type: 'omamori' },
       { type: 'points', value: 7 },
       { type: 'points', value: 7 },
     ];
@@ -124,20 +124,19 @@ const Rare = {
   showOmamoriPanel() {
     const panel = document.getElementById('rare-panel');
     const currentCount = App.teams[App.activeTeamIndex].omamori;
-    const newCount = Math.min(currentCount + 1, 2);
-    const alreadyMax = currentCount >= 2;
+    const alreadyMax = currentCount >= 1;
 
     panel.innerHTML = `
-      <div class="rare-panel-title">${alreadyMax ? 'Already at max omamori!' : 'You got an omamori!'}</div>
+      <div class="rare-panel-title">${alreadyMax ? 'Already have an omamori!' : 'You got an omamori!'}</div>
       <div class="rare-panel-body">
         <img class="rare-panel-img" src="${this.OMAMORI_IMG}" alt="Omamori" />
-        <div class="rare-panel-omamori-count">You now have <span class="omamori-count-num">${newCount}</span> omamori (max 2)</div>
+        <div class="rare-panel-omamori-count">${alreadyMax ? 'You already have one!' : 'You now have an omamori!'}</div>
       </div>
       <button class="rare-confirm-btn" id="rare-confirm">Confirm</button>
     `;
     document.getElementById('rare-confirm').onclick = () => {
       App._lastTurnResult = 'Rare (omamori)';
-      if (!alreadyMax) App.teams[App.activeTeamIndex].omamori = newCount;
+      if (!alreadyMax) App.teams[App.activeTeamIndex].omamori = 1;
       App.advanceTurn(null, 0);
     };
   },

@@ -60,13 +60,10 @@ function getNextQuestion() {
   return App.teamQueues[teamIndex].shift() || null;
 }
 
-// Renders a universal 2-slot omamori grid
+// Renders a universal 1-slot omamori grid
 function omamoriSlotsHTML(count) {
   return `<div class="omamori-slots">
     <div class="omamori-slot ${count >= 1 ? '' : 'empty'}">
-      <img src="assets/card-omamori.png" alt="omamori" />
-    </div>
-    <div class="omamori-slot ${count >= 2 ? '' : 'empty'}">
       <img src="assets/card-omamori.png" alt="omamori" />
     </div>
   </div>`;

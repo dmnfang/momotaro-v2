@@ -164,7 +164,7 @@ const CardGame = {
 
     if (team.omamori > 0) {
       this.flyOmamoriToOni(el, () => {
-        team.omamori--;
+        team.omamori = 0;
         this.renderOmamori();
         this.setConfirmBtn('Keep!', 'green', () => this.endTurn(this.roundPoints, true));
       });
