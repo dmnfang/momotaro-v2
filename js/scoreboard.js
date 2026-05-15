@@ -50,7 +50,7 @@ const Scoreboard = {
     const zone = el.parentElement;
     if (!zone) return;
     const digits = String(Math.abs(parseInt(el.textContent) || 0)).length;
-    const maxWidth = (zone.clientWidth - 16) / (digits * 0.6);
+    const maxWidth = (zone.clientWidth - 16) / (digits * 0.7);
     const maxHeight = zone.clientHeight * 0.8;
     const size = Math.min(maxWidth, maxHeight);
     el.style.fontSize = Math.floor(size) + 'px';
