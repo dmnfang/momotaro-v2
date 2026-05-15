@@ -668,20 +668,26 @@ img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
 
 /* Zone 2 — Round points, fixed height */
 .cardgame-panel .panel-points-zone {
-  height: 25%;
+  height: 30%;
   display: flex;
   align-items: center; justify-content: center;
   flex-shrink: 0;
   overflow: hidden;
+  background: var(--surface-base);
+  border-radius: var(--r-lg);
+  margin-bottom: 8px;
 }
 
 /* Zone 3 — Omamori, fixed height */
 .cardgame-panel .panel-omamori-zone {
-  height: 20%;
+  height: 15%;
   flex-shrink: 0;
   display: flex;
   align-items: center; justify-content: center;
   padding: 8px 0;
+  background: var(--surface-base);
+  border-radius: var(--r-lg);
+  margin-bottom: 8px;
 }
 .cardgame-panel .panel-omamori-zone .omamori-slots {
   display: grid;
