@@ -36,7 +36,7 @@ const CardGame = {
     keepBtn.onclick = () => CardGame.keep();
 
     this.updateRoundPoints();
-    this.fitRoundPoints();
+    setTimeout(() => this.fitRoundPoints(), 50);
     this.renderOmamori();
     this.renderScores();
     this.renderGrid();
@@ -183,7 +183,7 @@ const CardGame = {
     el.classList.remove('pop');
     void el.offsetWidth;
     el.classList.add('pop');
-    this.fitRoundPoints();
+    setTimeout(() => this.fitRoundPoints(), 50);
     el.addEventListener('animationend', () => el.classList.remove('pop'), { once: true });
   },
 
