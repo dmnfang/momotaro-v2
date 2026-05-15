@@ -192,7 +192,7 @@ const CardGame = {
     const zone = el?.parentElement;
     if (!el || !zone) return;
     const digits = String(Math.abs(parseInt(el.textContent.replace('+','')) || 0)).length + 1; // +1 for the + sign
-    const maxWidth = (zone.clientWidth - 16) / (digits * 0.6);
+    const maxWidth = (zone.clientWidth - 16) / (digits * 0.75);
     const maxHeight = zone.clientHeight * 0.8;
     const size = Math.min(maxWidth, maxHeight);
     el.style.fontSize = Math.floor(size) + 'px';
