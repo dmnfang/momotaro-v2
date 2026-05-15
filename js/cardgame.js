@@ -36,6 +36,7 @@ const CardGame = {
     keepBtn.onclick = () => CardGame.keep();
 
     this.updateRoundPoints();
+    this.fitRoundPoints();
     this.renderOmamori();
     this.renderScores();
     this.renderGrid();
@@ -182,7 +183,19 @@ const CardGame = {
     el.classList.remove('pop');
     void el.offsetWidth;
     el.classList.add('pop');
+    this.fitRoundPoints();
     el.addEventListener('animationend', () => el.classList.remove('pop'), { once: true });
+  },
+
+  fitRoundPoints() {
+    const el = document.getElementById('round-points');
+    const zone = el?.parentElement;
+    if (!el || !zone) return;
+    const digits = String(Math.abs(parseInt(el.textContent.replace('+','')) || 0)).length + 1; // +1 for the + sign
+    const maxWidth = (zone.clientWidth - 16) / (digits * 0.6);
+    const maxHeight = zone.clientHeight * 0.8;
+    const size = Math.min(maxWidth, maxHeight);
+    el.style.fontSize = Math.floor(size) + 'px';
   },
 
   renderOmamori() {
