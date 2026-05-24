@@ -1,0 +1,196 @@
+.cardgame-screen {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  background: var(--surface-base);
+  padding: 16px; gap: 12px;
+}
+
+.cardgame-topbar { flex-shrink: 0; }
+
+.cardgame-team-label {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cardgame-body {
+  flex: 1; display: flex; gap: 16px; min-height: 0;
+}
+
+.tile-grid {
+  flex: 7; min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.tile {
+  border-radius: var(--r-xl);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  cursor: pointer; position: relative;
+  overflow: hidden; min-height: 0;
+  transition: transform 0.15s;
+  background: var(--tile-face-down);
+  border: 2px solid var(--tile-face-down-border);
+}
+.tile:active { transform: scale(0.96); }
+.tile.flipped { cursor: default; }
+.tile.flipped:active { transform: none; }
+
+.tile-letter {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 8vw, 80px);
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  line-height: 1;
+}
+
+.tile.tile-dead {
+  background: var(--surface-inset);
+  border-color: var(--stroke-default);
+  opacity: 0.4;
+  cursor: default;
+}
+
+.tile.revealed-points {
+  background: var(--surface-card);
+  border: 3px solid var(--omamori);
+  cursor: default;
+}
+
+.tile.revealed-oni {
+  background: var(--oni-red-subtle);
+  border: 3px solid var(--oni-red);
+  cursor: default;
+  animation: oniShake 0.5s ease;
+}
+
+.tile-content {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 12px; padding: 12px;
+  width: 100%; height: 100%;
+  text-align: center;
+}
+
+.tile-points-text {
+  font-family: var(--font-display);
+  font-size: clamp(16px, 3.5vw, 36px);
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.tile-img {
+  width: 55%; max-height: 55%;
+  object-fit: contain;
+}
+
+.cardgame-panel {
+  flex: 3; min-width: 0;
+  background: var(--surface-card);
+  border-radius: var(--r-xl);
+  border: 2px solid var(--stroke-default);
+  display: flex; flex-direction: column;
+  align-items: stretch;
+  padding: 16px; gap: 0;
+}
+
+.panel-center {
+  flex: 1; min-height: 0;
+  display: flex; flex-direction: column;
+  gap: 8px;
+}
+
+.panel-points-zone {
+  flex: 3; min-height: 0;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+
+.round-points {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: #6AB4E8;
+  line-height: 1;
+  transition: color 0.25s;
+}
+
+.panel-omamori-zone {
+  flex: 2; min-height: 0;
+  display: flex; align-items: center; justify-content: center;
+  padding: 8px;
+  background: var(--surface-base);
+  border-radius: var(--r-lg);
+  margin-bottom: 8px;
+}
+
+.panel-omamori-zone .omamori-slots {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 100%;
+  width: 50%;
+}
+
+.panel-omamori-zone .omamori-slot {
+  position: relative;
+  overflow: hidden;
+}
+
+.panel-omamori-zone .omamori-slot img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: contain;
+  transition: opacity 0.25s ease;
+}
+
+.panel-omamori-zone .omamori-slot.empty img { opacity: 0; }
+
+.panel-scores {
+  display: flex; flex-direction: column;
+  gap: 8px; width: 100%; flex-shrink: 0;
+}
+
+.panel-score-row {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  background: var(--surface-inset);
+  border-radius: var(--r-md);
+  padding: 6px 10px;
+}
+
+.panel-score-row.active-team {
+  background: var(--omamori-subtle);
+  border: 2px solid var(--omamori);
+}
+
+.panel-score-name {
+  font-size: clamp(15px, 2vw, 20px); font-weight: 700;
+  color: var(--text-primary);
+}
+
+.panel-score-value {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.8vw, 30px); font-weight: 700;
+  color: #6AB4E8;
+}
+
+.keep-btn {
+  width: 100%; height: 56px;
+  border-radius: var(--r-lg);
+  background: var(--confirm);
+  color: var(--text-inverse);
+  font-family: var(--font-ui);
+  font-size: 16px; font-weight: 800;
+  border: none; cursor: pointer;
+  flex-shrink: 0; margin-top: 12px;
+  transition: transform 0.1s, opacity 0.1s;
+}
+.keep-btn:active { transform: scale(0.97); opacity: 0.85; }
+
+.tile.oni-protected {
+  background: var(--omamori-subtle);
+  border: 3px solid var(--omamori);
+  cursor: default;
+}

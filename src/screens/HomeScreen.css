@@ -1,0 +1,75 @@
+.home-screen {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  background: var(--surface-base);
+  padding: 16px; gap: 0;
+}
+
+.home-logo {
+  position: absolute;
+  top: 24px; left: 24px;
+  display: flex; align-items: center; gap: 8px;
+}
+
+.home-logo-text {
+  font-family: var(--font-ui);
+  font-size: 16px; font-weight: 800;
+  color: var(--text-primary);
+}
+
+.home-title {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 4px;
+  margin-bottom: 40px;
+}
+
+.home-title-line1 {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 10vw, 88px);
+  font-weight: 700;
+  color: var(--surface-card);
+  line-height: 1; letter-spacing: -1px;
+  -webkit-text-stroke: 3px var(--text-primary);
+  paint-order: stroke fill;
+}
+
+.home-title-line2 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 7.5vw, 68px);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1; letter-spacing: -1px;
+  -webkit-text-stroke: 3px var(--text-primary);
+  paint-order: stroke fill;
+}
+
+.home-title-oni {
+  color: var(--surface-card);
+  -webkit-text-stroke: 3px var(--text-primary);
+}
+
+.home-grade-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%; max-width: 640px;
+  background: var(--surface-panel);
+  border-radius: var(--r-xl);
+  padding: 16px;
+}
+
+.home-grade-btn {
+  height: 56px;
+  border-radius: var(--r-lg);
+  font-family: var(--font-ui);
+  font-size: 18px; font-weight: 800;
+  color: var(--text-primary);
+  border: none; cursor: pointer;
+  transition: transform 0.1s, opacity 0.1s;
+}
+.home-grade-btn:active { transform: scale(0.97); opacity: 0.85; }
+.home-grade-btn.grade-3 { background: var(--grade-3); }
+.home-grade-btn.grade-4 { background: var(--grade-4); }
+.home-grade-btn.grade-5 { background: var(--grade-5); }
+.home-grade-btn.grade-6 { background: var(--grade-6); }

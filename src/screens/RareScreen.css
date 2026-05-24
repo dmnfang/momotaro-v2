@@ -1,0 +1,149 @@
+.rare-screen {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  background: var(--surface-base);
+  padding: 16px; gap: 12px;
+}
+
+.rare-topbar { flex-shrink: 0; }
+
+.rare-team-label {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 600;
+  color: var(--text-primary);
+}
+
+.rare-body {
+  flex: 1; display: flex; gap: 16px; min-height: 0;
+}
+
+.rare-grid {
+  flex: 7; min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.rare-tile {
+  border-radius: var(--r-xl);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  cursor: pointer; position: relative;
+  overflow: hidden;
+  background: var(--gold);
+  border: 2px solid #D4881E;
+  transition: transform 0.15s;
+  min-height: 0;
+}
+.rare-tile:active { transform: scale(0.96); }
+.rare-tile.flipped {
+  cursor: default;
+  background: var(--surface-card);
+  border-color: #D4881E;
+}
+.rare-tile.flipped:active { transform: none; }
+.rare-tile.selected-rare {
+  border-color: #D4881E;
+  border-width: 3px;
+}
+
+.rare-tile-letter {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 8vw, 80px);
+  font-weight: 700;
+  color: rgba(45,42,30,0.6);
+  line-height: 1;
+}
+
+.rare-panel {
+  flex: 3; min-width: 0;
+  background: var(--surface-card);
+  border-radius: var(--r-xl);
+  border: 2px solid var(--stroke-default);
+  display: flex; flex-direction: column;
+  align-items: stretch;
+  padding: 16px; gap: 16px;
+}
+
+.rare-panel-title {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2.5vw, 26px); font-weight: 600;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.rare-panel-body {
+  flex: 1; min-height: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 16px;
+}
+
+.rare-panel-value {
+  font-family: var(--font-display);
+  font-size: clamp(96px, 16vw, 192px);
+  font-weight: 700;
+  color: #6AB4E8;
+  line-height: 1;
+}
+
+.rare-panel-img {
+  width: clamp(140px, 18vw, 260px);
+  height: clamp(140px, 18vw, 260px);
+  object-fit: contain;
+}
+
+.rare-panel-omamori-count {
+  font-size: clamp(16px, 2vw, 22px); font-weight: 700;
+  color: var(--text-muted); text-align: center;
+}
+
+.rare-confirm-btn {
+  width: 100%; height: 56px;
+  border-radius: var(--r-lg);
+  background: var(--confirm);
+  color: var(--text-inverse);
+  font-family: var(--font-ui);
+  font-size: 18px; font-weight: 800;
+  border: none; cursor: pointer; flex-shrink: 0;
+  transition: transform 0.1s, opacity 0.1s;
+}
+.rare-confirm-btn:active { transform: scale(0.97); opacity: 0.85; }
+.rare-confirm-btn:disabled { opacity: 0.35; cursor: not-allowed; transform: none; }
+
+.swap-team-list {
+  display: flex; flex-direction: column;
+  gap: 10px; width: 100%;
+}
+
+.swap-team-row {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  background: var(--surface-inset);
+  border-radius: var(--r-lg);
+  border: 2px solid transparent;
+  padding: 14px 18px; cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.swap-team-row.current-team {
+  opacity: 0.4; cursor: default;
+}
+
+.swap-team-row.selected-swap {
+  border-color: var(--omamori);
+}
+
+.swap-team-row:not(.current-team):active { opacity: 0.8; }
+
+.swap-team-name {
+  font-size: clamp(15px, 2vw, 20px); font-weight: 800;
+  color: var(--text-primary);
+}
+
+.swap-team-score {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.8vw, 30px); font-weight: 700;
+  color: #6AB4E8;
+}
