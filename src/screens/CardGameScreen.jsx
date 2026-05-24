@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import './CardGameScreen.css'
 
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+const BASE = import.meta.env.BASE_URL
 
 function shuffle(arr) {
   const a = [...arr]
@@ -140,7 +141,6 @@ function CardGameScreen({ game, updateGame, goTo }) {
     })
 
     if (team.omamori > 0) {
-      // flyOmamoriToOni — after 200ms transform the oni tile to protected state
       setTimeout(() => {
         setOniProtected(true)
         const newTeams = game.teams.map((t, i) =>
@@ -219,19 +219,19 @@ function CardGameScreen({ game, updateGame, goTo }) {
                 {state === 'points' && (
                   <div className="tile-content">
                     <span className="tile-points-text">+{tile.value} point{tile.value > 1 ? 's' : ''}</span>
-                    <img className="tile-img" src={`/assets/card-points-${tile.value}.png`} alt={`${tile.value} points`} onError={e => e.target.style.display = 'none'} />
+                    <img className="tile-img" src={`${BASE}assets/card-points-${tile.value}.png`} alt={`${tile.value} points`} onError={e => e.target.style.display = 'none'} />
                   </div>
                 )}
                 {state === 'oni' && !oniProtected && (
                   <div className="tile-content">
                     <span className="tile-points-text" style={{ color: 'var(--oni-red)' }}>–5 points</span>
-                    <img className="tile-img" src="/assets/card-oni.png" alt="Oni" onError={e => e.target.style.display = 'none'} />
+                    <img className="tile-img" src={`${BASE}assets/card-oni.png`} alt="Oni" onError={e => e.target.style.display = 'none'} />
                   </div>
                 )}
                 {state === 'oni' && oniProtected && (
                   <div className="tile-content">
                     <span className="tile-points-text" style={{ textDecoration: 'line-through', color: 'var(--text-muted)' }}>–5 points</span>
-                    <img className="tile-img" src="/assets/card-omamori.png" alt="Protected" onError={e => e.target.style.display = 'none'} />
+                    <img className="tile-img" src={`${BASE}assets/card-omamori.png`} alt="Protected" onError={e => e.target.style.display = 'none'} />
                   </div>
                 )}
               </div>
@@ -247,7 +247,7 @@ function CardGameScreen({ game, updateGame, goTo }) {
             <div className="panel-omamori-zone">
               <div className="omamori-slots">
                 <div className={`omamori-slot ${team.omamori >= 1 ? '' : 'empty'}`}>
-                  <img src="/assets/card-omamori.png" alt="omamori" />
+                  <img src={`${BASE}assets/card-omamori.png`} alt="omamori" />
                 </div>
               </div>
             </div>

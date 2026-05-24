@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './RareScreen.css'
 
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+const BASE = import.meta.env.BASE_URL
 
 function shuffle(arr) {
   const a = [...arr]
@@ -127,19 +128,19 @@ function RareScreen({ game, updateGame, goTo }) {
                 {state === 'points' && (
                   <div className="tile-content">
                     <span className="tile-points-text">+{t.value} points</span>
-                    <img className="tile-img" src="/assets/card-points-rare.png" alt="rare points" onError={e => e.target.style.display = 'none'} />
+                    <img className="tile-img" src={`${BASE}assets/card-points-rare.png`} alt="rare points" onError={e => e.target.style.display = 'none'} />
                   </div>
                 )}
                 {state === 'omamori' && (
                   <div className="tile-content">
                     <span className="tile-points-text">Omamori!</span>
-                    <img className="tile-img" src="/assets/card-omamori.png" alt="omamori" onError={e => e.target.style.display = 'none'} />
+                    <img className="tile-img" src={`${BASE}assets/card-omamori.png`} alt="omamori" onError={e => e.target.style.display = 'none'} />
                   </div>
                 )}
                 {state === 'swap' && (
                   <div className="tile-content">
                     <span className="tile-points-text" style={{ fontWeight: 900 }}>Swap!</span>
-                    <img className="tile-img" src="/assets/card-swap.png" alt="swap" onError={e => e.target.style.display = 'none'} />
+                    <img className="tile-img" src={`${BASE}assets/card-swap.png`} alt="swap" onError={e => e.target.style.display = 'none'} />
                   </div>
                 )}
               </div>
@@ -172,7 +173,7 @@ function RareScreen({ game, updateGame, goTo }) {
                 {team.omamori >= 1 ? 'Already have an omamori!' : 'You got an omamori!'}
               </div>
               <div className="rare-panel-body">
-                <img className="rare-panel-img" src="/assets/card-omamori.png" alt="omamori" onError={e => e.target.style.display = 'none'} />
+                <img className="rare-panel-img" src={`${BASE}assets/card-omamori.png`} alt="omamori" onError={e => e.target.style.display = 'none'} />
                 <div className="rare-panel-omamori-count">
                   {team.omamori >= 1 ? 'You already have one!' : 'You now have an omamori!'}
                 </div>

@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from 'react'
 import { fetchQuestions } from '../lib/api'
 import './ScoreboardScreen.css'
 
+const BASE = import.meta.env.BASE_URL
+
 function ScoreboardScreen({ game, updateGame, goTo }) {
   const scoreRefs = useRef([])
   const [showHistory, setShowHistory] = useState(false)
@@ -224,7 +226,7 @@ function ScoreboardScreen({ game, updateGame, goTo }) {
             <div className="omamori-display">
               <div className="omamori-slots">
                 <div className={`omamori-slot ${team.omamori >= 1 ? '' : 'empty'}`}>
-                  <img src="/assets/card-omamori.png" alt="omamori" />
+                  <img src={`${BASE}assets/card-omamori.png`} alt="omamori" />
                 </div>
               </div>
             </div>
@@ -248,16 +250,16 @@ function ScoreboardScreen({ game, updateGame, goTo }) {
                 <div>No turns completed yet.</div>
               ) : (
                 rounds.map((r, i) => (
-  <div key={i}>
-    <strong>Round {i + 1}:</strong>{' '}
-    {r.map((e, j) => (
-      <span key={j}>
-        {j > 0 ? ', ' : ''}
-        {e.name} – <strong>{e.result}</strong>
-      </span>
-    ))}
-  </div>
-))
+                  <div key={i}>
+                    <strong>Round {i + 1}:</strong>{' '}
+                    {r.map((e, j) => (
+                      <span key={j}>
+                        {j > 0 ? ', ' : ''}
+                        {e.name} – <strong>{e.result}</strong>
+                      </span>
+                    ))}
+                  </div>
+                ))
               )}
             </div>
             <button className="history-close-btn" onClick={() => setShowHistory(false)}>
