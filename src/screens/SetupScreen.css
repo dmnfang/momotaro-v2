@@ -139,3 +139,21 @@
 .setup-loading {
   font-size: 16px; color: var(--text-muted); padding: 24px 0;
 }
+
+.setup-nav-btn {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: var(--r-md);
+  background: var(--surface-panel);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+.setup-nav-btn:active { opacity: 0.7; transform: scale(0.94); }
