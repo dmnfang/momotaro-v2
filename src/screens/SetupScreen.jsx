@@ -7,6 +7,21 @@ const TEAM_COUNTS = [2, 3, 4]
 function SetupScreen({ game, updateGame, goTo }) {
   const [units, setUnits] = useState([])
   const [loading, setLoading] = useState(true)
+  const [isFullscreen, setIsFullscreen] = useState(!!document.fullscreenElement)
+
+  useEffect(() => {
+    const handler = () => setIsFullscreen(!!document.fullscreenElement)
+    document.addEventListener('fullscreenchange', handler)
+    return () => document.removeEventListener('fullscreenchange', handler)
+  }, [])
+
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen?.()
+    } else {
+      document.exitFullscreen?.()
+    }
+  }
 
   useEffect(() => {
   fetchUnits(game.grade).then(async data => {
@@ -59,12 +74,9 @@ function SetupScreen({ game, updateGame, goTo }) {
           <i className="ti ti-chevron-left" />
         </button>
         <span className="setup-grade-label">{gradeLabel}</span>
-        <button
-          className="setup-nav-btn"
-          onClick={() => document.documentElement.requestFullscreen?.()}
-        >
-          <i className="ti ti-arrows-maximize" />
-        </button>
+        <button className="setup-nav-btn" onClick={toggleFullscreen}>
+  <i className={`ti ${isFullscreen ? 'ti-arrows-minimize' : 'ti-arrows-maximize'}`} />
+</button>
       </div>
 
       <div className="setup-body">

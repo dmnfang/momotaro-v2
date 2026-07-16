@@ -41,12 +41,16 @@ function QuestionScreen({ game, updateGame, goTo }) {
   }
 
   const handlePlayCardGame = () => {
-    if (Math.random() < 0.30) {
-      goTo('rare')
-    } else {
-      goTo('cardgame')
-    }
+  if (team.omamori >= 1) {
+    goTo('cardgame')
+    return
   }
+  if (Math.random() < 0.30) {
+    goTo('rare')
+  } else {
+    goTo('cardgame')
+  }
+}
 
   // Parse helper images
   const helperImages = (() => {

@@ -7,6 +7,21 @@ const BASE = import.meta.env.BASE_URL
 function ScoreboardScreen({ game, updateGame, goTo }) {
   const scoreRefs = useRef([])
   const [showHistory, setShowHistory] = useState(false)
+  const [isFullscreen, setIsFullscreen] = useState(!!document.fullscreenElement)
+
+  useEffect(() => {
+    const handler = () => setIsFullscreen(!!document.fullscreenElement)
+    document.addEventListener('fullscreenchange', handler)
+    return () => document.removeEventListener('fullscreenchange', handler)
+  }, [])
+
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen?.()
+    } else {
+      document.exitFullscreen?.()
+    }
+  }
 
   const fitScore = (el) => {
     const zone = el?.parentElement
@@ -188,17 +203,9 @@ function ScoreboardScreen({ game, updateGame, goTo }) {
             <path d="M10 6v4l2.5 2.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
           </svg>
         </button>
-        <button className="nav-btn" onClick={() => {
-          if (!document.fullscreenElement) {
-            document.documentElement.requestFullscreen?.()
-          } else {
-            document.exitFullscreen?.()
-          }
-        }}>
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M3 8V3h5M17 8V3h-5M3 12v5h5M17 12v5h-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </button>
+        <button className="nav-btn" onClick={toggleFullscreen}>
+  <i className={`ti ${isFullscreen ? 'ti-arrows-minimize' : 'ti-arrows-maximize'}`} />
+</button>
       </div>
 
       <div className="scoreboard-columns" data-teams={game.teamCount}>

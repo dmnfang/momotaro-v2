@@ -14,11 +14,9 @@ function shuffle(arr) {
 }
 
 function generateTiles(teams, activeTeamIndex) {
-  const pointTiles = Array.from({ length: 8 }, () => ({
-    type: 'points',
-    value: Math.floor(Math.random() * 5) + 1
-  }))
-  const oni = { type: 'oni', value: -5 }
+  const pointValues = [5, 5, 4, 3, 3, 2, 2, 1]
+  const pointTiles = pointValues.map(value => ({ type: 'points', value }))
+  const oni = { type: 'oni', value: -10 }
   const leaderScore = Math.max(...teams.map(t => t.score))
   const myScore = teams[activeTeamIndex].score
   const needsHelp = leaderScore > 0 && myScore < leaderScore * 0.6
@@ -130,44 +128,45 @@ function CardGameScreen({ game, updateGame, goTo }) {
   }
 
   const revealOni = (index) => {
-    setOniFlipped(true)
-    setTileStates(prev => {
-      const next = [...prev]
-      next[index] = 'oni'
-      for (let i = 0; i < next.length; i++) {
-        if (next[i] === 'hidden') next[i] = 'dead'
-      }
+  setOniFlipped(true)
+  const oniValue = tilesRef.current[index].value // -10
+  setTileStates(prev => {
+    const next = [...prev]
+    next[index] = 'oni'
+    for (let i = 0; i < next.length; i++) {
+      if (next[i] === 'hidden') next[i] = 'dead'
+    }
+    return next
+  })
+
+  if (team.omamori > 0) {
+    setTimeout(() => {
+      setOniProtected(true)
+      const newTeams = game.teams.map((t, i) =>
+        i === game.activeTeamIndex ? { ...t, omamori: 0 } : t
+      )
+      updateGame({ teams: newTeams })
+      setTimeout(() => {
+        setKeepLabel('Keep!')
+        setKeepColor('var(--confirm)')
+        setKeepDisabled(false)
+        setKeepCallback(() => () => endTurn(roundPointsRef.current))
+      }, 500)
+    }, 200)
+  } else {
+    setRoundPoints(prev => {
+      const next = prev + oniValue
+      roundPointsRef.current = next
+      setTimeout(() => {
+        setKeepLabel('Back to Scoreboard')
+        setKeepColor('var(--oni-red)')
+        setKeepDisabled(false)
+        setKeepCallback(() => () => endTurn(next))
+      }, 100)
       return next
     })
-
-    if (team.omamori > 0) {
-      setTimeout(() => {
-        setOniProtected(true)
-        const newTeams = game.teams.map((t, i) =>
-          i === game.activeTeamIndex ? { ...t, omamori: 0 } : t
-        )
-        updateGame({ teams: newTeams })
-        setTimeout(() => {
-          setKeepLabel('Keep!')
-          setKeepColor('var(--confirm)')
-          setKeepDisabled(false)
-          setKeepCallback(() => () => endTurn(roundPointsRef.current))
-        }, 500)
-      }, 200)
-    } else {
-      setRoundPoints(prev => {
-        const next = prev - 5
-        roundPointsRef.current = next
-        setTimeout(() => {
-          setKeepLabel('Back to Scoreboard')
-          setKeepColor('var(--oni-red)')
-          setKeepDisabled(false)
-          setKeepCallback(() => () => endTurn(next))
-        }, 100)
-        return next
-      })
-    }
   }
+}
 
   const handleKeep = () => {
     if (keepCallback) keepCallback()
@@ -224,13 +223,13 @@ function CardGameScreen({ game, updateGame, goTo }) {
                 )}
                 {state === 'oni' && !oniProtected && (
                   <div className="tile-content">
-                    <span className="tile-points-text" style={{ color: 'var(--oni-red)' }}>–5 points</span>
+                    <span className="tile-points-text" style={{ color: 'var(--oni-red)' }}>–10 points</span>
                     <img className="tile-img" src={`${BASE}assets/card-oni.png`} alt="Oni" onError={e => e.target.style.display = 'none'} />
                   </div>
                 )}
                 {state === 'oni' && oniProtected && (
                   <div className="tile-content">
-                    <span className="tile-points-text" style={{ textDecoration: 'line-through', color: 'var(--text-muted)' }}>–5 points</span>
+                    <span className="tile-points-text" style={{ textDecoration: 'line-through', color: 'var(--text-muted)' }}>–10 points</span>
                     <img className="tile-img" src={`${BASE}assets/card-omamori.png`} alt="Protected" onError={e => e.target.style.display = 'none'} />
                   </div>
                 )}

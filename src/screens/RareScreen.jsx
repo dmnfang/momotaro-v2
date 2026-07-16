@@ -15,12 +15,11 @@ function shuffle(arr) {
 
 function generateTiles(teams, activeTeamIndex) {
   const allZero = teams.every(t => t.score === 0)
-  const hasOmamori = teams[activeTeamIndex].omamori >= 1
   const tiles = [
-    allZero ? { type: 'points', value: 7 } : { type: 'swap' },
-    hasOmamori ? { type: 'points', value: 7 } : { type: 'omamori' },
-    { type: 'points', value: 7 },
-    { type: 'points', value: 7 },
+    allZero ? { type: 'points', value: 15 } : { type: 'swap' },
+    { type: 'omamori' },
+    { type: 'omamori' },
+    { type: 'points', value: 15 },
   ]
   return shuffle(tiles)
 }
