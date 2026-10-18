@@ -2,7 +2,7 @@
   width: 100%; height: 100%;
   display: flex; flex-direction: column;
   background: var(--surface-base);
-  padding: 16px; gap: 12px;
+  padding: 20px; gap: 20px;
 }
 
 .question-topbar {
@@ -12,26 +12,26 @@
 
 .question-team-label {
   font-family: var(--font-display);
-  font-size: 22px; font-weight: 600;
+  font-size: 24px; font-weight: 600;
   color: var(--text-primary);
 }
 
 .question-body {
   flex: 1; min-height: 0;
-  display: flex; gap: 16px;
+  display: flex; gap: 20px;
 }
 
 .question-left {
   flex: 1; min-width: 0;
   display: flex; flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 .question-card {
   background: var(--surface-card);
   border-radius: var(--r-lg);
   border: 2px solid var(--stroke-default);
-  padding: 16px; flex-shrink: 0;
+  padding: 20px; flex-shrink: 0;
 }
 
 .question-qa { display: flex; flex-direction: column; gap: 8px; }
@@ -73,8 +73,11 @@
   background: var(--surface-card);
   border-radius: var(--r-lg);
   border: 2px solid var(--stroke-default);
-  overflow-y: auto; padding: 16px;
+  overflow-y: auto; padding: 20px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+.question-skit-wrap::-webkit-scrollbar { display: none; }
 
 .question-skit { display: flex; flex-direction: column; gap: 16px; }
 
@@ -88,7 +91,7 @@
 }
 
 .skit-speaker-a { color: var(--omamori); }
-.skit-speaker-b { color: var(--gold); filter: brightness(0.8); }
+.skit-speaker-b { color: var(--sun-700); }
 
 .skit-text {
   font-family: var(--font-ui);
@@ -99,20 +102,12 @@
 
 .skit-has-blanks .skit-text { color: var(--text-secondary); }
 
+/* Buttons are cardbox's .launch-btn, side by side */
 .question-actions {
   display: flex; gap: 12px;
   flex-shrink: 0; margin-top: auto;
 }
-
-.question-btn {
-  flex: 1; height: 56px; border-radius: var(--r-lg);
-  font-family: var(--font-ui); font-size: 16px; font-weight: 800;
-  border: none; cursor: pointer;
-  transition: transform 0.1s, opacity 0.1s;
-}
-.question-btn:active { transform: scale(0.97); opacity: 0.85; }
-.btn-secondary { background: var(--reject); color: var(--text-inverse); }
-.btn-primary   { background: var(--confirm); color: var(--text-inverse); }
+.question-actions .launch-btn { flex: 1; width: auto; }
 
 .question-right {
   flex: 1; min-width: 0; min-height: 0;
@@ -125,12 +120,11 @@
   border-radius: var(--r-lg);
   border: 2px solid var(--stroke-default);
   display: flex; align-items: center; justify-content: center;
-  overflow: hidden; padding: 16px;
+  overflow: hidden; padding: 20px;
 }
 
 .question-image-wrap.has-grid {
   background: var(--surface-panel);
-  padding: 16px;
 }
 
 .question-image-wrap img {

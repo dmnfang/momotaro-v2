@@ -1,87 +1,51 @@
+/* ============================================
+   MOMOTARO — app layer on top of clr.css
+   Load order: clr.css → momotaro.css → screen CSS
+   Surface / text / stroke / feedback tokens and the shared
+   reset all come from clr.css (Sand palette). Only
+   Momotaro-specific tokens, colour variants and animations live here.
+   ============================================ */
 :root {
-  --surface-base:    #FEFAF0;
-  --surface-panel:   #F0E8D5;
-  --surface-card:    #FFFFFF;
-  --surface-inset:   #F5EFE3;
+  /* Characters + game states, mapped onto the clr.css palette */
+  --oni:            var(--coral-500);
+  --oni-subtle:     var(--coral-50);
+  --omamori:        var(--grape-500);
+  --omamori-subtle: var(--grape-50);
+  --rare:           var(--sun-500);
+  --rare-border:    var(--sun-700);
+  --score:          var(--sky-500);
 
-  --text-primary:    #2D2A1E;
-  --text-secondary:  #4A4636;
-  --text-muted:      #8C8472;
-  --text-disabled:   #CEC0AC;
-  --text-inverse:    #FFFFFF;
+  /* Grade buttons */
+  --grade-3: var(--sun-500);
+  --grade-4: var(--sky-500);
+  --grade-5: var(--coral-500);
+  --grade-6: var(--leaf-500);
 
-  --stroke-default:  #DDD0BA;
-  --stroke-medium:   #C4B49A;
-  --stroke-strong:   #A89880;
-
-  --oni-red:         #E8443A;
-  --oni-red-subtle:  #FDEEED;
-  --gold:            #F5A623;
-  --gold-subtle:     #FEF3DC;
-  --peach:           #F7C5C2;
-  --omamori:         #6B4FA0;
-  --omamori-subtle:  #EDE8F7;
-  --confirm:         #3DAF7A;
-  --confirm-subtle:  #E3F5EC;
-  --reject:          #E8643A;
-  --reject-subtle:   #FDEEE9;
-
-  --grade-3: #F5C842;
-  --grade-4: #6AB4E8;
-  --grade-5: #F0806A;
-  --grade-6: #5DBF8A;
-
-  --tile-face-down:        #9B84D4;
-  --tile-face-down-border: #7B64B4;
-
-  --font-display: 'Fredoka', sans-serif;
-  --font-ui:      'Nunito', sans-serif;
-
-  --r-sm:   8px;
-  --r-md:   12px;
-  --r-lg:   16px;
-  --r-xl:   24px;
-  --r-pill: 9999px;
+  /* Face-down tiles */
+  --tile-face-down:        var(--grape-500);
+  --tile-face-down-border: var(--grape-700);
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-}
+html, body { padding-bottom: env(safe-area-inset-bottom); }
 
-html, body {
-  width: 100%; height: 100%; overflow: hidden;
-  background: var(--surface-base);
-  font-family: var(--font-ui);
-  color: var(--text-primary);
-  -webkit-font-smoothing: antialiased;
-  user-select: none; -webkit-user-select: none;
-  padding-bottom: env(safe-area-inset-bottom);
-}
+/* ============================================
+   BUTTONS
+   Same buttons as cardbox, from clr.css:
+     .launch-btn          56px full-width action
+     .mode-btn            56px action inside a grid
+     .nav-btn             40px icon button
+     .toggle-pill-circle  40px round toggle
+     .end-btn             48px modal button
+   Momotaro only adds the colour variants for .launch-btn.
+   ============================================ */
+.launch-btn-primary { background: var(--omamori); }
+.launch-btn-confirm { background: var(--success); }
+.launch-btn-alt     { background: var(--peach-500); }
+.launch-btn-oni     { background: var(--oni); }
 
-button {
-  font-family: var(--font-ui);
-  cursor: pointer;
-  border: none;
-  background: none;
-  color: inherit;
-  padding: 0;
-}
-button:active { opacity: 0.75; }
-button:disabled { cursor: not-allowed; opacity: 0.4; }
-img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
-
-.nav-btn {
-  width: 40px; height: 40px;
-  border-radius: var(--r-md);
-  background: var(--surface-panel);
-  color: var(--text-secondary);
-  display: flex; align-items: center; justify-content: center;
-  border: none; cursor: pointer; flex-shrink: 0;
-}
-.nav-btn:active { opacity: 0.7; transform: scale(0.94); }
-
-/* Omamori slots */
+/* ============================================
+   OMAMORI SLOTS
+   ============================================ */
 .omamori-slots {
   display: grid;
   gap: 8px;
@@ -101,7 +65,9 @@ img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
 }
 .omamori-slot.empty img { opacity: 0; }
 
-/* Tile flip animation */
+/* ============================================
+   ANIMATIONS
+   ============================================ */
 .tile, .rare-tile {
   transform-style: preserve-3d;
   perspective: 600px;
@@ -122,35 +88,10 @@ img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
 }
 .score-pop { animation: scorePop 0.4s cubic-bezier(0.34,1.56,0.64,1); }
 
-@keyframes popIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
-}
-
 @keyframes oniShake {
   0%,100% { transform: translateX(0); }
   20% { transform: translateX(-6px) rotate(-2deg); }
   40% { transform: translateX(6px) rotate(2deg); }
   60% { transform: translateX(-4px) rotate(-1deg); }
   80% { transform: translateX(4px) rotate(1deg); }
-}
-
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--stroke-default); border-radius: 2px; }
-
-.nav-btn {
-  width: 40px !important;
-  height: 40px !important;
-  min-width: 40px;
-  min-height: 40px;
-  border-radius: var(--r-md);
-  background: var(--surface-panel);
-  color: var(--text-secondary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  cursor: pointer;
-  flex-shrink: 0;
 }

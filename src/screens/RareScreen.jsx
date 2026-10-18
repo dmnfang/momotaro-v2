@@ -160,7 +160,7 @@ function RareScreen({ game, updateGame, goTo }) {
               <div className="rare-panel-body">
                 <div className="rare-panel-value">+{tile.value}</div>
               </div>
-              <button className="rare-confirm-btn" onClick={() => handleConfirmPoints(tile.value)}>
+              <button className="launch-btn launch-btn-confirm" onClick={() => handleConfirmPoints(tile.value)}>
                 End Turn
               </button>
             </>
@@ -177,7 +177,7 @@ function RareScreen({ game, updateGame, goTo }) {
                   {team.omamori >= 1 ? 'You already have one!' : 'You now have an omamori!'}
                 </div>
               </div>
-              <button className="rare-confirm-btn" onClick={handleConfirmOmamori}>
+              <button className="launch-btn launch-btn-confirm" onClick={handleConfirmOmamori}>
                 Confirm
               </button>
             </>
@@ -201,7 +201,7 @@ function RareScreen({ game, updateGame, goTo }) {
                 </div>
               </div>
               <button
-                className="rare-confirm-btn"
+                className="launch-btn launch-btn-confirm"
                 disabled={swapTarget === null}
                 onClick={handleConfirmSwap}
               >

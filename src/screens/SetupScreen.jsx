@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { fetchUnits, fetchQuestions } from '../lib/api'
+import { CaretLeft, ArrowsOut, ArrowsIn, Check } from '@phosphor-icons/react'
 import './SetupScreen.css'
 
 const TEAM_COUNTS = [2, 3, 4]
@@ -70,13 +71,13 @@ function SetupScreen({ game, updateGame, goTo }) {
   return (
     <div className="setup-screen">
       <div className="setup-topbar">
-        <button className="setup-nav-btn" onClick={() => goTo('home')}>
-          <i className="ti ti-chevron-left" />
+        <button className="nav-btn" onClick={() => goTo('home')}>
+          <CaretLeft size={24} weight="fill" />
         </button>
         <span className="setup-grade-label">{gradeLabel}</span>
-        <button className="setup-nav-btn" onClick={toggleFullscreen}>
-  <i className={`ti ${isFullscreen ? 'ti-arrows-minimize' : 'ti-arrows-maximize'}`} />
-</button>
+        <button className="nav-btn" onClick={toggleFullscreen}>
+          {isFullscreen ? <ArrowsIn size={24} weight="fill" /> : <ArrowsOut size={24} weight="fill" />}
+        </button>
       </div>
 
       <div className="setup-body">
@@ -86,7 +87,7 @@ function SetupScreen({ game, updateGame, goTo }) {
             {TEAM_COUNTS.map(count => (
               <button
                 key={count}
-                className={`team-count-btn ${game.teamCount === count ? 'active' : ''}`}
+                className={`toggle-pill-circle ${game.teamCount === count ? 'active' : ''}`}
                 onClick={() => updateGame({ teamCount: count })}
               >
                 {count}
@@ -120,7 +121,7 @@ function SetupScreen({ game, updateGame, goTo }) {
                     <div className="unit-card-header">
   <span className="unit-card-title">{unit.name}</span>
   <div className="unit-dot">
-    {isSelected && <i className="ti ti-check" style={{ fontSize: 12 }} />}
+    {isSelected && <Check size={12} weight="bold" />}
   </div>
 </div>
 <div className="unit-chip">{unit.questionCount} questions</div>
@@ -132,7 +133,7 @@ function SetupScreen({ game, updateGame, goTo }) {
         </div>
 
         <button
-          className="setup-launch-btn"
+          className="launch-btn launch-btn-primary"
           disabled={game.selectedUnits.length === 0}
           onClick={handleLaunch}
         >

@@ -15,8 +15,9 @@ function HomeScreen({ game, updateGame, goTo }) {
 
   return (
     <div className="home-screen">
-      <div className="home-logo">
-        <span className="home-logo-text">⚪ momotaro</span>
+      <div className="home-logo brand">
+        {/* add <img className="brand-logo" src={...} alt="" /> here once the new Momotaro art is in */}
+        <span className="brand-name">momotaro</span>
       </div>
       <div className="home-title">
         <h1 className="home-title-line1">MOMOTARO</h1>
@@ -26,7 +27,7 @@ function HomeScreen({ game, updateGame, goTo }) {
         {GRADES.map(grade => (
           <button
             key={grade.id}
-            className={`home-grade-btn ${grade.className}`}
+            className={`mode-btn ${grade.className}`}
             onClick={() => handleGradeSelect(grade)}
           >
             {grade.label}

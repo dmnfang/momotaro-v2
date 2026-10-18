@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { fetchQuestions } from '../lib/api'
+import { CaretLeft, Clock, ArrowsOut, ArrowsIn } from '@phosphor-icons/react'
 import './ScoreboardScreen.css'
 
 const BASE = import.meta.env.BASE_URL
@@ -53,7 +54,7 @@ function ScoreboardScreen({ game, updateGame, goTo }) {
     const stepVal = delta / steps
 
     el.style.transition = 'color 0.2s ease'
-    el.style.color = isPositive ? 'var(--confirm)' : 'var(--oni-red)'
+    el.style.color = isPositive ? 'var(--success)' : 'var(--oni)'
 
     let current = oldScore
     let step = 0
@@ -142,7 +143,7 @@ function ScoreboardScreen({ game, updateGame, goTo }) {
 
       const toRed = pulse % 2 === 0
       els.forEach(el => {
-        el.style.color = toRed ? 'var(--oni-red)' : '#6AB4E8'
+        el.style.color = toRed ? 'var(--oni)' : 'var(--score)'
       })
       pulse++
       setTimeout(doPulse, PULSE_MS)
@@ -193,19 +194,14 @@ function ScoreboardScreen({ game, updateGame, goTo }) {
     <div className="scoreboard-screen">
       <div className="scoreboard-topbar">
         <button className="nav-btn" onClick={() => goTo('setup')}>
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M12 15L7 10L12 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+          <CaretLeft size={24} weight="fill" />
         </button>
         <button className="nav-btn" onClick={() => setShowHistory(true)}>
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <circle cx="10" cy="10" r="7" stroke="currentColor" strokeWidth="1.8"/>
-            <path d="M10 6v4l2.5 2.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-          </svg>
+          <Clock size={24} weight="fill" />
         </button>
         <button className="nav-btn" onClick={toggleFullscreen}>
-  <i className={`ti ${isFullscreen ? 'ti-arrows-minimize' : 'ti-arrows-maximize'}`} />
-</button>
+          {isFullscreen ? <ArrowsIn size={24} weight="fill" /> : <ArrowsOut size={24} weight="fill" />}
+        </button>
       </div>
 
       <div className="scoreboard-columns" data-teams={game.teamCount}>
@@ -239,7 +235,7 @@ function ScoreboardScreen({ game, updateGame, goTo }) {
             </div>
 
             <button
-              className={`question-trigger-btn ${i === game.activeTeamIndex ? '' : 'inactive'}`}
+              className={`launch-btn launch-btn-confirm question-trigger-btn ${i === game.activeTeamIndex ? '' : 'inactive'}`}
               onClick={() => handleOpenQuestion(i)}
             >
               Question
@@ -269,7 +265,7 @@ function ScoreboardScreen({ game, updateGame, goTo }) {
                 ))
               )}
             </div>
-            <button className="history-close-btn" onClick={() => setShowHistory(false)}>
+            <button className="end-btn end-btn-secondary" onClick={() => setShowHistory(false)}>
               Close
             </button>
           </div>

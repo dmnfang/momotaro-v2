@@ -3,6 +3,25 @@ import './CardGameScreen.css'
 
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 const BASE = import.meta.env.BASE_URL
+const POINT_TILE_COUNT = 8
+
+const CONFETTI_COLORS = [
+  'var(--sun-500)', 'var(--sky-500)', 'var(--coral-500)', 'var(--leaf-500)',
+  'var(--grape-500)', 'var(--bubblegum-500)', 'var(--mint-500)',
+]
+
+function makeConfetti(count = 48) {
+  return Array.from({ length: count }, (_, i) => ({
+    id: i,
+    left: Math.random() * 100,
+    size: 12 + Math.floor(Math.random() * 3) * 4,
+    color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
+    round: Math.random() < 0.4,
+    drift: Math.round((Math.random() - 0.5) * 160),
+    delay: Math.random() * 0.6,
+    duration: 2 + Math.random() * 1.5,
+  }))
+}
 
 function shuffle(arr) {
   const a = [...arr]
@@ -39,11 +58,13 @@ function CardGameScreen({ game, updateGame, goTo }) {
   const [keepLabel, setKeepLabel] = useState('Keep!')
   const [keepColor, setKeepColor] = useState('')
   const [keepCallback, setKeepCallback] = useState(null)
+  const [confetti, setConfetti] = useState(null)
   const [letters] = useState(() => shuffle([...ALPHABET]).slice(0, 9))
   const pointsRef = useRef(null)
   const pointsZoneRef = useRef(null)
   const tilesRef = useRef([])
   const roundPointsRef = useRef(0)
+  const flippedCountRef = useRef(0)
 
   const team = game.teams[game.activeTeamIndex]
 
@@ -55,6 +76,7 @@ function CardGameScreen({ game, updateGame, goTo }) {
     setRoundPoints(0)
     roundPointsRef.current = 0
     setFlippedCount(0)
+    flippedCountRef.current = 0
     setOniFlipped(false)
     setOniProtected(false)
     setKeepDisabled(true)
@@ -66,6 +88,12 @@ function CardGameScreen({ game, updateGame, goTo }) {
   useEffect(() => {
     fitRoundPoints()
   }, [roundPoints])
+
+  useEffect(() => {
+    if (!confetti) return
+    const t = setTimeout(() => setConfetti(null), 4500)
+    return () => clearTimeout(t)
+  }, [confetti])
 
   const fitRoundPoints = () => {
     const el = pointsRef.current
@@ -82,6 +110,12 @@ function CardGameScreen({ game, updateGame, goTo }) {
     if (tileStates[index] !== 'hidden' || oniFlipped) return
 
     let tile = tilesRef.current[index]
+
+    // Every points tile is already flipped (or flipping): the oni is locked
+    const pointsOpened = tilesRef.current.filter(
+      (t, i) => t.type === 'points' && tileStates[i] !== 'hidden'
+    ).length
+    if (tile.type === 'oni' && pointsOpened === POINT_TILE_COUNT) return
 
     if (tile.type === 'oni' && flippedCount < 2) {
       const safeIndex = tilesRef.current.findIndex(
@@ -112,14 +146,23 @@ function CardGameScreen({ game, updateGame, goTo }) {
   }
 
   const revealPoints = (index, value) => {
+    flippedCountRef.current += 1
+    const newCount = flippedCountRef.current
+    const allClear = newCount === POINT_TILE_COUNT
     setTileStates(prev => {
       const next = [...prev]
       next[index] = 'points'
+      // All points tiles found: lock the oni so it can't be flipped
+      if (allClear) {
+        for (let i = 0; i < next.length; i++) {
+          if (next[i] === 'hidden') next[i] = 'dead'
+        }
+      }
       return next
     })
-    const newCount = flippedCount + 1
     setFlippedCount(newCount)
     if (newCount === 1) setKeepDisabled(false)
+    if (allClear) setConfetti(makeConfetti())
     setRoundPoints(prev => {
       const next = prev + value
       roundPointsRef.current = next
@@ -148,7 +191,7 @@ function CardGameScreen({ game, updateGame, goTo }) {
       updateGame({ teams: newTeams })
       setTimeout(() => {
         setKeepLabel('Keep!')
-        setKeepColor('var(--confirm)')
+        setKeepColor('var(--success)')
         setKeepDisabled(false)
         setKeepCallback(() => () => endTurn(roundPointsRef.current))
       }, 500)
@@ -159,7 +202,7 @@ function CardGameScreen({ game, updateGame, goTo }) {
       roundPointsRef.current = next
       setTimeout(() => {
         setKeepLabel('Back to Scoreboard')
-        setKeepColor('var(--oni-red)')
+        setKeepColor('var(--oni)')
         setKeepDisabled(false)
         setKeepCallback(() => () => endTurn(next))
       }, 100)
@@ -195,6 +238,26 @@ function CardGameScreen({ game, updateGame, goTo }) {
 
   return (
     <div className="cardgame-screen">
+      {confetti && (
+        <div className="confetti-layer" aria-hidden="true">
+          {confetti.map(p => (
+            <span
+              key={p.id}
+              className="confetti-piece"
+              style={{
+                left: `${p.left}%`,
+                width: p.size,
+                height: p.size,
+                background: p.color,
+                borderRadius: p.round ? '50%' : 4,
+                '--drift': `${p.drift}px`,
+                animationDelay: `${p.delay}s`,
+                animationDuration: `${p.duration}s`,
+              }}
+            />
+          ))}
+        </div>
+      )}
       <div className="cardgame-topbar">
         <span className="cardgame-team-label">{team.name} – Choose some cards!</span>
       </div>
@@ -223,7 +286,7 @@ function CardGameScreen({ game, updateGame, goTo }) {
                 )}
                 {state === 'oni' && !oniProtected && (
                   <div className="tile-content">
-                    <span className="tile-points-text" style={{ color: 'var(--oni-red)' }}>–10 points</span>
+                    <span className="tile-points-text" style={{ color: 'var(--oni)' }}>–10 points</span>
                     <img className="tile-img" src={`${BASE}assets/card-oni.png`} alt="Oni" onError={e => e.target.style.display = 'none'} />
                   </div>
                 )}
@@ -262,7 +325,7 @@ function CardGameScreen({ game, updateGame, goTo }) {
           </div>
 
           <button
-            className="keep-btn"
+            className="launch-btn launch-btn-confirm"
             disabled={keepDisabled}
             style={{ background: keepColor || '' }}
             onClick={handleKeep}

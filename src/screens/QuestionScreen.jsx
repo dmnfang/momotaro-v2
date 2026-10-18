@@ -91,7 +91,7 @@ function QuestionScreen({ game, updateGame, goTo }) {
                   <span className="qa-letter a-letter">A</span>
                   <span
                     className={`qa-text qa-scaffold ${hasAnswer && !scaffoldRevealed ? 'tappable' : ''}`}
-                    style={scaffoldRevealed ? { color: 'var(--confirm)', cursor: 'default' } : {}}
+                    style={scaffoldRevealed ? { color: 'var(--success)', cursor: 'default' } : {}}
                     onClick={() => {
                       if (hasAnswer && !scaffoldRevealed) setScaffoldRevealed(true)
                     }}
@@ -131,10 +131,10 @@ function QuestionScreen({ game, updateGame, goTo }) {
           )}
 
           <div className="question-actions">
-            <button className="question-btn btn-secondary" onClick={handleNewQuestion}>
+            <button className="launch-btn launch-btn-alt" onClick={handleNewQuestion}>
               New Question
             </button>
-            <button className="question-btn btn-primary" onClick={handlePlayCardGame}>
+            <button className="launch-btn launch-btn-confirm" onClick={handlePlayCardGame}>
               Play Card Game
             </button>
           </div>
