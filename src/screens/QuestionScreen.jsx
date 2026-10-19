@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { sound } from '../lib/sound'
 import './QuestionScreen.css'
 
 function formatText(text) {
@@ -93,7 +94,10 @@ function QuestionScreen({ game, updateGame, goTo }) {
                     className={`qa-text qa-scaffold ${hasAnswer && !scaffoldRevealed ? 'tappable' : ''}`}
                     style={scaffoldRevealed ? { color: 'var(--success)', cursor: 'default' } : {}}
                     onClick={() => {
-                      if (hasAnswer && !scaffoldRevealed) setScaffoldRevealed(true)
+                      if (hasAnswer && !scaffoldRevealed) {
+                        sound.play('tilePop')
+                        setScaffoldRevealed(true)
+                      }
                     }}
                   >
                     {scaffoldRevealed ? formatText(q.answer) : formatText(q.scaffold)}
@@ -131,7 +135,7 @@ function QuestionScreen({ game, updateGame, goTo }) {
           )}
 
           <div className="question-actions">
-            <button className="launch-btn launch-btn-alt" onClick={handleNewQuestion}>
+            <button className="launch-btn launch-btn-alt" data-sound="nextCard" onClick={handleNewQuestion}>
               New Question
             </button>
             <button className="launch-btn launch-btn-confirm" onClick={handlePlayCardGame}>

@@ -1,4 +1,7 @@
+import SoundToggle from '../components/SoundToggle'
 import './HomeScreen.css'
+
+const BASE = import.meta.env.BASE_URL
 
 const GRADES = [
   { id: 'grade3', label: 'Grade 3', className: 'grade-3' },
@@ -19,10 +22,16 @@ function HomeScreen({ game, updateGame, goTo }) {
         {/* add <img className="brand-logo" src={...} alt="" /> here once the new Momotaro art is in */}
         <span className="brand-name">momotaro</span>
       </div>
-      <div className="home-title">
-        <h1 className="home-title-line1">MOMOTARO</h1>
-        <h1 className="home-title-line2">AND THE <span className="home-title-oni">ONI</span></h1>
+      <div className="home-actions">
+        <SoundToggle />
       </div>
+      <h1 className="home-title">
+        <img
+          className="home-title-img"
+          src={`${BASE}assets/title-image.png`}
+          alt="Momotaro and the Oni"
+        />
+      </h1>
       <div className="home-grade-grid">
         {GRADES.map(grade => (
           <button

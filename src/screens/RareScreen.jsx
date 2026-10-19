@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { sound } from '../lib/sound'
 import './RareScreen.css'
 
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
@@ -38,6 +39,7 @@ function RareScreen({ game, updateGame, goTo }) {
   const handleFlip = (index) => {
     if (tileStates[index] !== 'hidden' || flippedIndex !== null) return
 
+    sound.play('cardFlip')
     setTileStates(prev => {
       const next = [...prev]
       next[index] = 'flipping'
@@ -52,6 +54,7 @@ function RareScreen({ game, updateGame, goTo }) {
       })
       setFlippedIndex(index)
       setPanel(tiles[index].type)
+      sound.play(tiles[index].type === 'swap' ? 'correct' : 'celebration')
     }, 150)
   }
 

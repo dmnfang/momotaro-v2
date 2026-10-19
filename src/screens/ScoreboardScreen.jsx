@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import { fetchQuestions } from '../lib/api'
 import { CaretLeft, Clock, ArrowsOut, ArrowsIn } from '@phosphor-icons/react'
+import SoundToggle from '../components/SoundToggle'
+import { sound } from '../lib/sound'
 import './ScoreboardScreen.css'
 
 const BASE = import.meta.env.BASE_URL
@@ -62,9 +64,11 @@ function ScoreboardScreen({ game, updateGame, goTo }) {
     const tick = setInterval(() => {
       step++
       current += stepVal
+      sound.tick({ freq: isPositive ? 800 + step * 40 : 1600 - step * 40, volume: 0.6 })
       el.textContent = Math.round(current)
       if (step >= steps) {
         clearInterval(tick)
+        sound.play(isPositive ? 'correct' : 'wrong')
         el.textContent = newScore
         fitScore(el)
         const newTeams = game.teams.map((t, i) =>
@@ -114,6 +118,7 @@ function ScoreboardScreen({ game, updateGame, goTo }) {
 
     const doPulse = () => {
       if (pulse >= PULSE_COUNT) {
+        sound.play('cardFlip')
         const newTeams = [...game.teams]
         const tmp = newTeams[from].score
         newTeams[from] = { ...newTeams[from], score: newTeams[to].score }
@@ -142,6 +147,7 @@ function ScoreboardScreen({ game, updateGame, goTo }) {
       }
 
       const toRed = pulse % 2 === 0
+      sound.tick({ freq: toRed ? 700 : 1000 })
       els.forEach(el => {
         el.style.color = toRed ? 'var(--oni)' : 'var(--score)'
       })
@@ -193,15 +199,18 @@ function ScoreboardScreen({ game, updateGame, goTo }) {
   return (
     <div className="scoreboard-screen">
       <div className="scoreboard-topbar">
-        <button className="nav-btn" onClick={() => goTo('setup')}>
+        <button className="nav-btn" data-sound="close" onClick={() => goTo('setup')}>
           <CaretLeft size={24} weight="fill" />
         </button>
-        <button className="nav-btn" onClick={() => setShowHistory(true)}>
-          <Clock size={24} weight="fill" />
-        </button>
-        <button className="nav-btn" onClick={toggleFullscreen}>
-          {isFullscreen ? <ArrowsIn size={24} weight="fill" /> : <ArrowsOut size={24} weight="fill" />}
-        </button>
+        <div className="topbar-actions">
+          <button className="nav-btn" data-sound="modalOpen" onClick={() => setShowHistory(true)}>
+            <Clock size={24} weight="fill" />
+          </button>
+          <SoundToggle />
+          <button className="nav-btn" onClick={toggleFullscreen}>
+            {isFullscreen ? <ArrowsIn size={24} weight="fill" /> : <ArrowsOut size={24} weight="fill" />}
+          </button>
+        </div>
       </div>
 
       <div className="scoreboard-columns" data-teams={game.teamCount}>

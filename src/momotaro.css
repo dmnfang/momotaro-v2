@@ -95,3 +95,10 @@ html, body { padding-bottom: env(safe-area-inset-bottom); }
   60% { transform: translateX(-4px) rotate(-1deg); }
   80% { transform: translateX(4px) rotate(1deg); }
 }
+
+/* Top bar: icon buttons grouped on the right (sound + fullscreen) */
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { fetchUnits, fetchQuestions } from '../lib/api'
 import { CaretLeft, ArrowsOut, ArrowsIn, Check } from '@phosphor-icons/react'
+import SoundToggle from '../components/SoundToggle'
 import './SetupScreen.css'
 
 const TEAM_COUNTS = [2, 3, 4]
@@ -71,13 +72,16 @@ function SetupScreen({ game, updateGame, goTo }) {
   return (
     <div className="setup-screen">
       <div className="setup-topbar">
-        <button className="nav-btn" onClick={() => goTo('home')}>
+        <button className="nav-btn" data-sound="close" onClick={() => goTo('home')}>
           <CaretLeft size={24} weight="fill" />
         </button>
         <span className="setup-grade-label">{gradeLabel}</span>
-        <button className="nav-btn" onClick={toggleFullscreen}>
-          {isFullscreen ? <ArrowsIn size={24} weight="fill" /> : <ArrowsOut size={24} weight="fill" />}
-        </button>
+        <div className="topbar-actions">
+          <SoundToggle />
+          <button className="nav-btn" onClick={toggleFullscreen}>
+            {isFullscreen ? <ArrowsIn size={24} weight="fill" /> : <ArrowsOut size={24} weight="fill" />}
+          </button>
+        </div>
       </div>
 
       <div className="setup-body">
@@ -133,7 +137,7 @@ function SetupScreen({ game, updateGame, goTo }) {
         </div>
 
         <button
-          className="launch-btn launch-btn-primary"
+          className="launch-btn launch-btn-primary" data-sound="launch"
           disabled={game.selectedUnits.length === 0}
           onClick={handleLaunch}
         >

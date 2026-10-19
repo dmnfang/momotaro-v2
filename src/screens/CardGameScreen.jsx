@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { sound } from '../lib/sound'
 import './CardGameScreen.css'
 
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
@@ -130,6 +131,7 @@ function CardGameScreen({ game, updateGame, goTo }) {
       }
     }
 
+    sound.play('cardFlip')
     setTileStates(prev => {
       const next = [...prev]
       next[index] = 'flipping'
@@ -149,6 +151,8 @@ function CardGameScreen({ game, updateGame, goTo }) {
     flippedCountRef.current += 1
     const newCount = flippedCountRef.current
     const allClear = newCount === POINT_TILE_COUNT
+    // pitch climbs with every points tile found
+    sound.play('tilePop', { rate: 1 + (newCount - 1) * 0.05 })
     setTileStates(prev => {
       const next = [...prev]
       next[index] = 'points'
@@ -162,7 +166,10 @@ function CardGameScreen({ game, updateGame, goTo }) {
     })
     setFlippedCount(newCount)
     if (newCount === 1) setKeepDisabled(false)
-    if (allClear) setConfetti(makeConfetti())
+    if (allClear) {
+      setConfetti(makeConfetti())
+      sound.play('celebration')
+    }
     setRoundPoints(prev => {
       const next = prev + value
       roundPointsRef.current = next
@@ -185,6 +192,7 @@ function CardGameScreen({ game, updateGame, goTo }) {
   if (team.omamori > 0) {
     setTimeout(() => {
       setOniProtected(true)
+      sound.play('correct')
       const newTeams = game.teams.map((t, i) =>
         i === game.activeTeamIndex ? { ...t, omamori: 0 } : t
       )
@@ -197,6 +205,7 @@ function CardGameScreen({ game, updateGame, goTo }) {
       }, 500)
     }, 200)
   } else {
+    sound.play('wrong')
     setRoundPoints(prev => {
       const next = prev + oniValue
       roundPointsRef.current = next
